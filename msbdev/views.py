@@ -10,6 +10,9 @@ from msbdev.models import TextCopy
 
 
 def index(request, formsent=False):
+    if request.method == "POST":
+        return formsubmit(request)
+
     mydivs = TextCopy.objects.filter(active=True)
     divlist = {}
 

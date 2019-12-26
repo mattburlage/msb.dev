@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Contact</h4>
-                    <form role="form" method='POST' action='{% url 'msbdev:formsubmit' %}'>
+                    <form role="form" method='POST' action='{% url 'msbdev:index' %}'>
                         {% csrf_token %}
                         <div class="form-group">
                             {{ form.email }}
