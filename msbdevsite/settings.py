@@ -25,7 +25,10 @@ SECRET_KEY = '!hw6_7g0-mk=m*)xzcudvv9%!gz8)8%ctu*h0azxah29^c3zy#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'www.msb.dev']
+ALLOWED_HOSTS = [
+    u'www.msb.dev',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -55,8 +58,8 @@ ROOT_URLCONF = 'msbdevsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
