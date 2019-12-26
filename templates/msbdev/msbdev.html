@@ -91,11 +91,9 @@
                 <div class="col-md-4">
                     {{ textcopy.cardtwo|safe }}
                 </div>
-                {% if textcopy.cardthree %}
-                    <div class="col-md-4">
-                        {{ textcopy.cardthree|safe }}
-                    </div>
-                {% endif %}
+                <div class="col-md-4">
+                    {{ textcopy.cardthree|safe }}
+                </div>
             </div>
         </div>
     </div>
@@ -112,11 +110,13 @@
                     {{ textcopy.principletwo|safe }}
                 </li>
             </ul>
-            <ul class="list-unstyled">
-                <li>
-                    {{ textcopy.principlethree|safe }}
-                </li>
-            </ul>
+            {% if textcopy.principlethree %}
+                <ul class="list-unstyled">
+                    <li>
+                        {{ textcopy.principlethree|safe }}
+                    </li>
+                </ul>
+            {% endif %}
         </div>
     </section>
 </main>
