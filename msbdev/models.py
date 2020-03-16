@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class TextCopy(models.Model):
     name = models.CharField(max_length=64, verbose_name='Internal Name')
     html = models.TextField(verbose_name='HTML')
@@ -16,6 +15,7 @@ class ContactForm(models.Model):
     email = models.EmailField()
     note = models.TextField()
     added_on = models.DateTimeField(auto_now_add=True)
+    copies = models.IntegerField(default=1)
 
     def __str__(self):
         return self.email

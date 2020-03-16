@@ -10,7 +10,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from msbdev.forms import ContactFormForm
-from msbdev.models import TextCopy, AppSetting
+from msbdev.models import TextCopy, AppSetting, ContactForm
 from msbdev.serializers import ContactFormSerializer
 
 
@@ -41,8 +41,18 @@ def submit_form(request):
     serializer = ContactFormSerializer(data=request.data)
 
     if serializer.is_valid():
-        if serializer.validated_data['email'] in AppSetting.objects.get(name="EMAIL_BLACKLIST").content:
-            return Response(data=serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
+        email = serializer.validated_data['email']
+        note = serializer.validated_data['note']
+
+        if email in AppSetting.objects.get(name="EMAIL_BLACKLIST").content:
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+        existing_form = ContactForm.objects.filter(email=email, note=note)
+        if existing_form:
+
+
+            return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 
         serializer.save()
         # user = User.objects.first()

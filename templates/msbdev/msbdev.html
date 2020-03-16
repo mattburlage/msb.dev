@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <section class="jumbotron text-center mb-0" id='principlesdiv'>
+    <section class="jumbotron text-center mb-0" id='principles'>
         <div class="container">
             <h4 class="jumbotron-heading">{{ textcopy.principlestitle|safe }}</h4>
             <ul class="list-unstyled">
@@ -144,6 +144,13 @@
         src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.mjs"
 ></script>
 <script>
+    // Show the contact form when the link is clicked
+    function showContactForm() {
+        $('#navbarHeader').collapse('show');
+        $('#id_email').focus();
+        return false;
+    }
+
     // Pulled from Django Docs
     // https://docs.djangoproject.com/en/3.0/ref/csrf/#setting-the-token-on-the-ajax-request
 
