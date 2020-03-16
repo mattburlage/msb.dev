@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.http import Http404
 from django.shortcuts import render, redirect
 
@@ -44,6 +45,9 @@ def submit_form(request):
             return Response(data=serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
 
         serializer.save()
+        # user = User.objects.first()
+        # user.email_user('New Contact Form', 'You have a new contact form to review.')
+
         return Response(data=serializer.data, status=status.HTTP_200_OK)
     else:
         return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
