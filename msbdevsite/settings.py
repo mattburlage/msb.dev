@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'msbdev.apps.MsbdevConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

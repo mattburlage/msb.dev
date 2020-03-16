@@ -15,6 +15,15 @@ class TextCopy(models.Model):
 class ContactForm(models.Model):
     email = models.EmailField()
     note = models.TextField()
+    added_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.email
+
+
+class AppSetting(models.Model):
+    name = models.CharField(max_length=128)
+    content = models.TextField(null=True)
+
+    def __str__(self):
+        return self.name

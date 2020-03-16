@@ -45,20 +45,18 @@
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Contact</h4>
-                    <form role="form" method='POST' action='{% url 'msbdev:index' %}'>
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {{ form.email }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.note }}
-                        </div>
-                        <div class="form-group text-right">
-                            <button type='submit' class="btn btn-light btn-sm">
-                                Submit
-                            </button>
-                        </div>
-                    </form>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.note }}
+                    </div>
+                    <div class="form-group text-right">
+                        <button type='button' onclick="submitForm()" class="btn btn-light btn-sm">
+                            Submit
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,24 +133,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
 
-    // Show the contact form when the link is clicked
-    function showContactForm() {
-        $('#navbarHeader').collapse('show');
-        $('#id_email').focus();
-        return false;
+    function submitForm () {
+        const currentHost = window.location.hostname;
+
+        let formData = {
+            email: $('#id_email').val(),
+            note: $('#id_note').val(),
+        };
+
+        fetch('/api/submit/',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log(json)
+        })
     }
 
-    {% if formsent %}
-        // If we're passed the formsent variable,
-        // display success message for below time then fade out
-        const seconds = {{ textcopy.formmsgsec|safe }};
 
-        document.addEventListener('DOMContentLoaded', () => {
-            setInterval(() => {
-                $('#msgnotify').fadeOut('slow');
-            }, seconds * 1000)
-        });
-    {% endif %}
 
 </script>
 </body>
