@@ -4,5 +4,6 @@ from msbdev import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("resume/", views.resume, name="resume"),
     path("api/submit/", views.submit_form, name="formsubmit"),
     ]

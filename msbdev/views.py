@@ -36,6 +36,11 @@ def index(request):
     return render(request, 'msbdev/msbdev.html', context=context)
 
 
+def resume(request):
+    """ Handle showing resume page"""
+    return render(request, 'resume/index.html')
+
+
 @api_view(['POST'])
 def submit_form(request):
     serializer = ContactFormSerializer(data=request.data)
