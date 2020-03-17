@@ -38,7 +38,7 @@ def index(request):
 
 def resume(request):
     """ Handle showing resume page"""
-    return render(request, 'resume/index.html')
+    return render(request, 'resume/resume.html')
 
 
 @api_view(['POST'])
