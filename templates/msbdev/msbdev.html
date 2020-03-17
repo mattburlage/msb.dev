@@ -38,6 +38,15 @@
             color: inherit;
             text-decoration: inherit;
         }
+
+        .small-md {
+            font-size: 85%;
+        }
+
+        @media (min-width: 1200px) {
+            .small-md {font-size: 100%;}
+        }
+
     </style>
 </head>
 <body>
@@ -91,16 +100,16 @@
         {{ textcopy.mainjumbotron|safe }}
     </section>
     <div class="d-none d-print-block">
-    <div class="container pt-2 pb-0">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="display-4 text-center">Matthew Smith Burlage</h1>
-                <p class="lead text-center collapse"><b>Software Engineer</b></p>
-                <p class="lead text-center">Matthew is a software developer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
+        <div class="container pt-4 pb-3">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4 text-center">Matthew Smith Burlage</h1>
+                    <p class="lead text-center collapse"><b>Software Engineer</b></p>
+                    <p class="lead text-center">Matthew is a software developer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <div class="album py-5 bg-light collapse show" id='mywork'>
         <div class="container">
             <div class="row">
@@ -152,7 +161,7 @@
                         <span class="text-muted small">2019 - present | (770) 531-6712</span>
                     </div>
                     <div>
-                        <ul>
+                        <ul class="small-md">
                             <li>Developed internal and external systems to manage Hall County’s day to day business needs.</li>
                             <li>Management systems include Agenda, Personnel, Fleet, Finance, Policies, and IT Access.</li>
                             <li>Started new Enterprise Application Development division from the ground up.</li>
@@ -169,7 +178,7 @@
                         <span class="text-muted small">2018 | (770) 531-6712</span>
                     </div>
                     <div>
-                        <ul>
+                        <ul class="small-md">
                             <li>Co-managed enterprise Active Directory environment with 1300 end units plus other hardware.</li>
                             <li>Used scripting in order to increase speed of deployments, software installation, and repairs.</li>
                             <li>Co-managed Windows Servers under guidance of Systems Administrator, including IIS & SQL.</li>
@@ -182,7 +191,7 @@
                         <span class="text-muted small">2017 | (866) 692-2947</span>
                     </div>
                     <div>
-                        <ul>
+                        <ul class="small-md">
                             <li>Assisted clients remotely with repairs, including Windows, Apple, Android, and malware.</li>
                             <li>Achieved Rock Star status from first week in role. (NPS 95.5, Resolves per hour 1.74)</li>
                             <li>Provided clients with simple notes, walkthroughs or how to guides on every repair.</li>
@@ -195,7 +204,7 @@
                         <span class="text-muted small">2014 - 2017 | (866) 692-2947</span>
                     </div>
                     <div>
-                        <ul>
+                        <ul class="small-md">
                             <li>Champions improvement of process quality to provide better client experiences.</li>
                             <li>Educates agents in the tools and strategies to improve efficiency and quality.</li>
                             <li>Acted as Sales Floor Leader. Regularly handles delicate issues throughout store.</li>
@@ -209,7 +218,7 @@
                         <span class="text-muted small">2014 - 2017 | (866) 692-2947</span>
                     </div>
                     <div>
-                        <ul>
+                        <ul class="small-md">
                             <li>Served as tech advisor on design, functionality, and implementation of all systems.</li>
                             <li>Advised planning and design of new quick service and bar/lounge concepts/menus.</li>
                             <li>Managed wait and bar staff resulting in maximized efficiency and sales.</li>
