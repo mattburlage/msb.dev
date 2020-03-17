@@ -49,10 +49,11 @@ def submit_form(request):
 
         existing_form = ContactForm.objects.filter(email=email, note=note)
         if existing_form:
-
+            existing_form = existing_form[0]
+            existing_form.copies += 1
+            existing_form.save()
 
             return Response(data=serializer.data, status=status.HTTP_200_OK)
-
 
         serializer.save()
         # user = User.objects.first()
