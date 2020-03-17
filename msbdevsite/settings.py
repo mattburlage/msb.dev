@@ -122,9 +122,9 @@ USE_TZ = True
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = u'/home/mattsmithburlage/msbdevsite/media'
+MEDIA_ROOT = u'/home/mattsmithburlage/apps/msb.dev/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = u'/home/mattsmithburlage/msbdevsite/static'
+STATIC_ROOT = u'/home/mattsmithburlage/apps/msb.dev/static'
 STATIC_URL = '/static/'
 
 
