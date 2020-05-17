@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="https://msb.dev/static/favicon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.nertzboard.com/static/favicon.png">
+
+    <meta name="msapplication-TileColor" content="#343A40">
+    <meta name="msapplication-TileImage" content="https://www.nertzboard.com/static/favicon.png">
+    <meta name="theme-color" content="#343A40">
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>msb.dev - Custom Easy-to-Use Software Solutions</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <style>
+        .link-unstyled {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        .small-md {
+            font-size: 85%;
+        }
+
+        @media (min-width: 1200px) {
+            .small-md {font-size: 100%;}
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About Me</h4>
+                            <p class="text-muted">Matthew has been working in the tech industry for more than a decade in a variety of different positions. Throughout his career, his major focus has been simplification and efficiency through software development. Reach out to us to see if we have a solution to meet your needs.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <input type="hidden" name="csrfmiddlewaretoken" value="iMbz2OKpQiLOwICEqsA8irQxgm7XBH89fSQvjGTF0OQtKIX0H5ppZusXNy8NoE8s">
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control form-control-sm" placeholder="Your email address" maxlength="254" required id="id_email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="note" cols="40" rows="2" class="form-control form-control-sm" placeholder="Leave a note" required id="id_note">
+</textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-8">
+                                <span id="msgnotify" class="text-success" style="display: none;">
+                                    <i class="fas fa-check mr-4 ml-0"></i>Message Sent
+                                </span>
+                            </div>
+                            <div class="col-4 text-right">
+                                <button type='button' onclick="submitForm()" class="btn btn-light btn-sm">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex">
+            <a href="#" class="navbar-brand d-flex align-items-center"> <strong>msb</strong>.dev</a>
+            <span class="pull-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </span>
+        </div>
+    </div>
+</header>
+<main role="main">
+    <section class="d-print-none jumbotron text-center mb-0">
+        <div class="container" id="home_wave">
+                    <h1 class="jumbotron-heading">Matthew Smith Burlage</h1>
+                    <h4 class="jumbotron-heading collapse-div collapse show">Software Engineer</h4>
+                    <p class="lead text-muted">Matthew is a software engineer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
+ <ul class="nav justify-content-center collapse-div collapse">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav justify-content-center collapse-div collapse show">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="#mywork">My Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="#principles">Principles</a>
+                        </li>
+                    </ul>
+                    </div>
+    </section>
+    <div class="d-none d-print-block">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4 text-center">Matthew Smith Burlage</h1>
+                    <p class="lead text-center collapse"><b>Software Engineer</b></p>
+                    <p class="lead text-center">Matthew is a software developer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="album py-5 bg-light collapse show" id='mywork'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow"><img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including
+ approval workflows and minutes capture.</p> </div> </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>
+                                <div class="card-body">
+                                    <p class="card-text"><strong>NertzBoard</strong><br>
+
+NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.
+</p>
+                                </div>
+                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>
+                                <div class="card-body">
+                                    <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group d-none">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="jumbotron text-center mb-0 collapse show" id='principles'>
+        <div class="container">
+            <h4 class="jumbotron-heading">My Development Principles</h4>
+            <ul class="list-unstyled">
+                <li>
+                    <h6 class="mt-3">Security First </h6>In today's world, the value of data is ever increasing. With this in mind, any software system should consider security from the outset. From design through implementation and maintenance, security should be front and center.  No system is worth a penny if it is insecure.
+                </li>
+            </ul>
+            <ul class="list-unstyled">
+                <li>
+                    <h6>
+    Ease of Use </h6>
+                            The number one goal of any system should, outside security, be to create a wonderful user experience for end users and admins alike.  Users should be able to focus on their work, not on learning new systems. This can be accomplished by focusing the experience around the tasks that your users need to complete. All a user needs to know is what their end goal is, and the system should take care of putting the information they need in front of them or whomever needs it.
+                </li>
+            </ul>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <h6>
+    Embrace and Prepare for Change </h6>
+                            Business needs change regularly, and any successful enterprise must have software that can adjust with them. Software solutions, therefore, must be customizable and built to handle changing needs.  This includes building them from day one in a way that makes later upgrades a breeze.
+                    </li>
+                </ul>
+
+        </div>
+    </section>
+
+    <div class="collapse pt-5 pb-5" id="resume">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-8">
+
+                    <h5>Work Experience</h5>
+                    <div class="mb-2">
+                        Software Developer,
+                        <span class="font-weight-bold">Hall County Government</span><br>
+                        <span class="text-muted small">2019 - 2020 | (770) 531-6712</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Developed internal and external systems to manage Hall County’s day to day business needs.</li>
+                            <li>Management systems include Agenda, Personnel, Fleet, Finance, Policies, and IT Access.</li>
+                            <li>Started new Enterprise Application Development division from the ground up.</li>
+                            <li>Made foundational decisions on tools, design paradigm, methodology, and stack.</li>
+                            <li>Implemented thorough and robust error and tracking and development lifecycle tools.</li>
+                            <li>Maintained thorough documentation for users, admins, and future developers thru comments.</li>
+                            <li>Installed, configured, and managed development, staging, and production servers.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        PC Technician,
+                        <span class="font-weight-bold">Hall County Government</span><br>
+                        <span class="text-muted small">2018 | (770) 531-6712</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Co-managed enterprise Active Directory environment with 1300 end units plus other hardware.</li>
+                            <li>Used scripting in order to increase speed of deployments, software installation, and repairs.</li>
+                            <li>Co-managed Windows Servers under guidance of Systems Administrator, including IIS & SQL.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        Covert Fulfillment Agent (Remote Tech Support),
+                        <span class="font-weight-bold">Geek Squad</span><br>
+                        <span class="text-muted small">2017 | (866) 692-2947</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Assisted clients remotely with repairs, including Windows, Apple, Android, and malware.</li>
+                            <li>Achieved Rock Star status from first week in role. (NPS 95.5, Resolves per hour 1.74)</li>
+                            <li>Provided clients with simple notes, walkthroughs or how to guides on every repair.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        Precinct Leader/Advanced Repair Agent,
+                        <span class="font-weight-bold">Geek Squad</span><br>
+                        <span class="text-muted small">2014 - 2017 | (866) 692-2947</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Champions improvement of process quality to provide better client experiences.</li>
+                            <li>Educates agents in the tools and strategies to improve efficiency and quality.</li>
+                            <li>Acted as Sales Floor Leader. Regularly handles delicate issues throughout store.</li>
+                            <li>Managed, with guidance, scheduling and staffing, including helping with hiring.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        Technician
+                        <span class="font-weight-bold">TelAid Industries</span><br>
+                        <span class="text-muted small">2014 | (860) 439-7312</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Conceptualized, designed, and implemented processes to help improve efficiency.</li>
+                            <li>Aided in configuration, imaging, repair, labeling, and related prep of hardware.</li>
+                            <li>Configured routers, switches, servers, desktops, laptops, phones, and more.</li>
+                            <li>Assisted external and internal stakeholders with technical questions.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        Floor Manager/IT Specialist,
+                        <span class="font-weight-bold">Telio Restaurant</span><br>
+                        <span class="text-muted small">2011 - 2013 | (917) 705-0129</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Served as tech advisor on design, functionality, and implementation of all systems.</li>
+                            <li>Advised planning and design of new quick service and bar/lounge concepts/menus.</li>
+                            <li>Managed wait and bar staff resulting in maximized efficiency and sales.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        Stage Manager (Magic Department),
+                        <span class="font-weight-bold">French Woods Festival for the Performing Arts</span><br>
+                        <span class="text-muted small">2007 – 2010 | (954) 346-7455</span>
+                    </div>
+                    <div>
+                        <ul class="small-md">
+                            <li>Organized end of session shows for 100+ performers using MS Access database.</li>
+                            <li>Experience with theater management including lights and sounds systems.</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="link-unstyled" href="https://www.msb.dev" target="_blank">
+                                <i class="fas fa-globe pr-2" aria-hidden="true"></i>www.msb.dev
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-unstyled" href="mailto:matt@msb.dev">
+                                <i class="fas fa-at pr-2" aria-hidden="true"></i>matt@msb.dev
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-unstyled" href="https://www.linkedin.com/in/matthew-burlage" target="_blank">
+                                <i class="fab fa-linkedin pr-2" aria-hidden="true"></i>/matthew-burlage
+                            </a>
+                        </li>
+                    </ul>
+                    <h5>Skills</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fab fa-react" aria-hidden="true"></i>&nbsp;&nbsp;React.js, React Router
+                        </li>
+                        <li>
+                            <i class="fab fa-python" aria-hidden="true"></i>&nbsp;&nbsp;Python, Django, DRF, Flask
+                        </li>
+                        <li>
+                            <i class="fab fa-node-js" aria-hidden="true"></i>&nbsp;&nbsp;Webpack, NPM, Meteor.js
+                        </li>
+                        <li>
+                            <i class="fas fa-database" aria-hidden="true"></i>&nbsp;&nbsp;PostgreSQL, MS SQL, MongoDB
+                        </li>
+                        <li>
+                            <i class="fas fa-server" aria-hidden="true"></i>&nbsp;&nbsp;IIS, Ubuntu, wfastcgi
+                        </li>
+                        <li>
+                            <i class="fas fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;Git, GitHub, Jira, Sentry
+                        </li>
+                    </ul>
+                    <h5>Education</h5>
+                    <ul class="list-unstyled small">
+                        <li>
+                            <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;AS, Computer Science, Univ. of North Georgia
+                        </li>
+                        <li>
+                            <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;BS, Computer Science, UNG, 2020 Graduation
+                        </li>
+                        <li>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>&nbsp;&nbsp;CompTIA A+ Certification
+                        </li>
+                    </ul>
+                    <h5>Things I've Built</h5>
+                    <p class="small text-muted">Here are just two of the several systems I've built. Feel free to ask for more details!</p>
+                    <h6>Agenda Management</h6>
+                    <p>
+                        The Agenda Management software helps local governments stay on top of their meetings, approval workflows and minutes capture.
+                        It also produces PDF agenda's to be presented to citizens as required by law in some states.
+                    </p>
+                    <h6>NertzBoard</h6>
+                    <p>
+                        NertzBoard is a scoreboard for a multiplayer solitaire game called Nertz. NertzBoard handles the calculations for scoring and
+                        updates the other players in real time to see who is ahead. Players can focus on the action instead of worrying about math.
+                    </p>
+                    <div class="text-center mt-5">
+                        <img src="/static/msbdev/qrcode.png" class="img-responsive w-50" alt="qr-code to msb.dev">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="text-muted pb-3 pt-4 bg-dark d-print-none">
+    <div class="container">
+        <p class="float-right"> <a href="#" class="text-light small">Back to top</a> </p>
+        <p class="text-white small">Thank you for visiting my site!</p>
+                <p  class="text-white small">&copy; 2020 Matt Smith Burlage Development Shop</p>
+    </div>
+</footer>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.mjs"
+></script>
+<script>
+    // Show the contact form when the link is clicked
+    function showContactForm() {
+        $('#navbarHeader').collapse('show');
+        $('#id_email').focus();
+        return false;
+    }
+
+    // Pulled from Django Docs
+    // https://docs.djangoproject.com/en/3.0/ref/csrf/#setting-the-token-on-the-ajax-request
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+
+    // Function to submit the contact form via AJAX
+    function submitForm () {
+
+        let formData = {
+            email: $('#id_email').val(),
+            note: $('#id_note').val(),
+        };
+
+        fetch('/api/submit/',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(json => {
+                console.log(json);
+                $('#id_email').val('');
+                $('#id_note').val('');
+                const msgNotify = $('#msgnotify');
+                msgNotify.fadeIn(400);
+                setInterval(() => msgNotify.fadeOut(1000), 3000)
+            })
+    }
+
+    function toggleResume () {
+        $('#principles').collapse('toggle');
+        $('#mywork').collapse('toggle');
+        $('#resume').collapse('toggle');
+        $('.collapse-div').collapse('toggle');
+    }
+
+
+
+</script>
+</body>
+</html>
