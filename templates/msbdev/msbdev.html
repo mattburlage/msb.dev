@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     {% load static %}
-    {#    {% load staticfiles %}#}
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -26,8 +26,6 @@
     <meta name="msapplication-TileImage" content="https://msb.dev/static/favicon.png">
     <meta name="theme-color" content="#343A40">
 
-    {#        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" />#}
-    {#        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"></script>#}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title>{{ textcopy.pagetitle }}</title>
     <!-- Bootstrap core CSS -->
@@ -306,7 +304,12 @@
                         </li>
                     </ul>
                     <h5>Things I've Built</h5>
-                    <p class="small text-muted">Here are just two of the several systems I've built. Feel free to ask for more details!</p>
+                    <p class="small text-muted">Here are a few things I have built. Feel free to ask for more details!</p>
+                    <h6>create-django-react-app</h6>
+                    <p>
+                        A python package designed to help users set up a Django and React based app,
+                        including the REST framework, JWT login, and cors header tweaks.
+                    </p>
                     <h6>Agenda Management</h6>
                     <p>
                         The Agenda Management software helps local governments stay on top of their meetings, approval workflows and minutes capture.
