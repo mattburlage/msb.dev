@@ -8,5 +8,7 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+SECRET_KEY = "asbfibasifbaskutdkdbvksakjb"
+
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
