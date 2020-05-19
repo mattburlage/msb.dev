@@ -1,33 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="https://msb.dev/static/favicon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://msb.dev/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://msb.dev/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://msb.dev/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://msb.dev/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://msb.dev/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.nertzboard.com/static/favicon.png">
+
     <meta name="msapplication-TileColor" content="#343A40">
-    <meta name="msapplication-TileImage" content="https://msb.dev/static/favicon.png">
+    <meta name="msapplication-TileImage" content="https://www.nertzboard.com/static/favicon.png">
     <meta name="theme-color" content="#343A40">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <title>{{ textcopy.pagetitle }}</title>
+    <title>msb.dev - Custom Easy-to-Use Software Solutions</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template -->
@@ -53,16 +51,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
-                    {{ textcopy.aboutme|safe }}
+                    <h4 class="text-white">About Me</h4>
+                            <p class="text-muted">Matthew has been working in the tech industry for more than a decade in a variety of different positions. Throughout his career, his major focus has been simplification and efficiency through software development. Reach out to us to see if we have a solution to meet your needs.</p>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Contact</h4>
-                    {% csrf_token %}
+                    <input type="hidden" name="csrfmiddlewaretoken" value="iMbz2OKpQiLOwICEqsA8irQxgm7XBH89fSQvjGTF0OQtKIX0H5ppZusXNy8NoE8s">
                     <div class="form-group">
-                        {{ form.email }}
+                        <input type="email" name="email" class="form-control form-control-sm" placeholder="Your email address" maxlength="254" required id="id_email">
                     </div>
                     <div class="form-group">
-                        {{ form.note }}
+                        <textarea name="note" cols="40" rows="2" class="form-control form-control-sm" placeholder="Leave a note" required id="id_note">
+                        </textarea>
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -84,7 +84,7 @@
     </div>
     <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex">
-            {{ textcopy.header|safe }}
+            <a href="#" class="navbar-brand d-flex align-items-center"> <strong>msb</strong>.dev</a>
             <span class="pull-right">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,35 @@
 </header>
 <main role="main">
     <section class="d-print-none jumbotron text-center mb-0">
-        {{ textcopy.mainjumbotron|safe }}
+        <div class="container" id="home_wave">
+                    <h1 class="jumbotron-heading">Matthew Smith Burlage</h1>
+                    <h4 class="jumbotron-heading collapse-div collapse show">Software Engineer</h4>
+                    <p class="lead text-muted">Matthew is a software engineer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
+ <ul class="nav justify-content-center collapse-div collapse">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav justify-content-center collapse-div collapse show">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="#mywork">My Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="#principles">Principles</a>
+                        </li>
+                    </ul>
+                    </div>
     </section>
     <div class="d-none d-print-block">
         <div class="container pt-5 pb-5">
@@ -112,37 +140,60 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    {{ textcopy.cardone|safe }}
+                    <div class="card mb-4 box-shadow"><img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including
+ approval workflows and minutes capture.</p> </div> </div>
                 </div>
                 <div class="col-md-4">
-                    {{ textcopy.cardtwo|safe }}
+                    <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>
+                                <div class="card-body">
+                                    <p class="card-text"><strong>NertzBoard</strong><br>
+
+NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.
+</p>
+                                </div>
+                            </div>
                 </div>
                 <div class="col-md-4">
-                    {{ textcopy.cardthree|safe }}
+                    <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>
+                                <div class="card-body">
+                                    <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group d-none">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
     </div>
     <section class="jumbotron text-center mb-0 collapse show" id='principles'>
         <div class="container">
-            <h4 class="jumbotron-heading">{{ textcopy.principlestitle|safe }}</h4>
+            <h4 class="jumbotron-heading">My Development Principles</h4>
             <ul class="list-unstyled">
                 <li>
-                    {{ textcopy.principleone|safe }}
+                    <h6 class="mt-3">Security First </h6>In today's world, the value of data is ever increasing. With this in mind, any software system should consider security from the outset. From design through implementation and maintenance, security should be front and center.  No system is worth a penny if it is insecure.
                 </li>
             </ul>
             <ul class="list-unstyled">
                 <li>
-                    {{ textcopy.principletwo|safe }}
+                    <h6>
+    Ease of Use </h6>
+                            The number one goal of any system should, outside security, be to create a wonderful user experience for end users and admins alike.  Users should be able to focus on their work, not on learning new systems. This can be accomplished by focusing the experience around the tasks that your users need to complete. All a user needs to know is what their end goal is, and the system should take care of putting the information they need in front of them or whomever needs it.
                 </li>
             </ul>
-            {% if textcopy.principlethree %}
+
                 <ul class="list-unstyled">
                     <li>
-                        {{ textcopy.principlethree|safe }}
+                        <h6>
+    Embrace and Prepare for Change </h6>
+                            Business needs change regularly, and any successful enterprise must have software that can adjust with them. Software solutions, therefore, must be customizable and built to handle changing needs.  This includes building them from day one in a way that makes later upgrades a breeze.
                     </li>
                 </ul>
-            {% endif %}
+
         </div>
     </section>
 
@@ -282,13 +333,7 @@
                             <i class="fab fa-node-js" aria-hidden="true"></i>&nbsp;&nbsp;Webpack, NPM, Meteor.js
                         </li>
                         <li>
-                            <i class="fab fa-php"></i>&nbsp;&nbsp;PHP, PDO, Laravel
-                        </li>
-                        <li>
-                            <i class="fas fa-database" aria-hidden="true"></i>&nbsp;&nbsp;PostgreSQL, Microsoft SQL
-                        </li>
-                        <li>
-                            <i class="fas fa-database" aria-hidden="true"></i>&nbsp;&nbsp;MySQL, SQLite, MongoDB
+                            <i class="fas fa-database" aria-hidden="true"></i>&nbsp;&nbsp;PostgreSQL, MS SQL, MongoDB
                         </li>
                         <li>
                             <i class="fas fa-server" aria-hidden="true"></i>&nbsp;&nbsp;IIS, Ubuntu, wfastcgi
@@ -314,7 +359,11 @@
                     <h6>create-django-react-app</h6>
                     <p>
                         A python package designed to help users set up a Django and React based app,
-                        including the REST framework, JWT login, and cors header tweaks.
+                        including the REST framework, JWT based login, and CORS header handling.
+                        <span class="text-muted small">
+                            <a class="text-muted" target="_blank" href="https://pypi.org/project/create-django-react-app/">PyPi</a> -
+                            <a class="text-muted" target="_blank" href="https://github.com/mattburlage/create-django-react-app">GitHub</a>
+                        </span>
                     </p>
                     <h6>Agenda Management</h6>
                     <p>
@@ -325,18 +374,15 @@
                     <p>
                         NertzBoard is a scoreboard for a multiplayer solitaire game called Nertz. NertzBoard handles the calculations for scoring and
                         updates the other players in real time to see who is ahead. Players can focus on the action instead of worrying about math.
+                        <span class="text-muted small">
+                            <a class="text-muted" target="_blank" href="https://www.nertzboard.com">View</a> -
+                            <a class="text-muted" target="_blank" href="https://github.com/mattburlage/nertzboard">GitHub</a>
+                        </span>
                     </p>
-                    <div class="text-center mt-5">
-                        <img src="{% static 'msbdev/qrcode.png' %}" class="img-responsive w-50" alt="qr-code to msb.dev">
-                    </div>
+{#                    <div class="text-center mt-4">#}
+{#                        <img src="/static/msbdev/qrcode.png" class="img-responsive w-50" alt="qr-code to msb.dev">#}
+{#                    </div>#}
                 </div>
-                {#                <div class="col-4">#}
-                {#                    <h6>Position Control Management</h6>#}
-                {#                    <p>#}
-                {#                        The Position Control system is designed to help an organization track the positions it has budgeted for, the employees occupying#}
-                {#                        those positions, and all the paperwork, history, financial info, and other logistics involved in managing a large workforce.#}
-                {#                    </p>#}
-                {#                </div>#}
             </div>
         </div>
     </div>
@@ -344,13 +390,14 @@
 <footer class="text-muted pb-3 pt-4 bg-dark d-print-none">
     <div class="container">
         <p class="float-right"> <a href="#" class="text-light small">Back to top</a> </p>
-        {{ textcopy.footer|safe }}
+        <p class="text-white small">Thank you for visiting my site!</p>
+                <p  class="text-white small">&copy; 2020 Matt Smith Burlage Development Shop</p>
     </div>
 </footer>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-{#        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>#}
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -419,6 +466,8 @@
         $('#resume').collapse('toggle');
         $('.collapse-div').collapse('toggle');
     }
+
+
 
 </script>
 </body>
