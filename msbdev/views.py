@@ -11,7 +11,11 @@ from msbdev.serializers import ContactFormSerializer
 def index(request):
     """ Handle standard page view"""
     # Render template
-    return render(request, 'msbdev/msbdev2.html')
+    context = {
+        'show_numbers': AppSetting.get_setting('show_numbers'),
+        'show_cur_numbers': AppSetting.get_setting('show_cur_numbers'),
+    }
+    return render(request, 'msbdev/msbdev2.html', context)
 
 
 @api_view(['POST'])

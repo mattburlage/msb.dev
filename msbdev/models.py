@@ -25,5 +25,12 @@ class AppSetting(models.Model):
     name = models.CharField(max_length=128)
     content = models.TextField(null=True)
 
-    def __str__(self):
-        return self.name
+    @staticmethod
+    def get_setting(setting_name, default=None):
+        try:
+            return AppSetting.objects.get(name=setting_name).content
+        except AppSetting.DoesNotExist:
+            return default
+
+def __str__(self):
+    return self.name
