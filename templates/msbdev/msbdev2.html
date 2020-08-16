@@ -25,7 +25,7 @@
     <meta name="theme-color" content="#343A40">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <title>msb.dev - Custom Easy-to-Use Software Solutions</title>
+    <title>Matthew Smith Burlage - Software Engineer</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template -->
@@ -45,7 +45,7 @@
 
     </style>
 </head>
-<body>
+<body class="bg-dark">
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -93,38 +93,86 @@
         </div>
     </div>
 </header>
+
 <main role="main">
-    <section class="d-print-none jumbotron text-center mb-0">
-        <div class="container" id="home_wave">
-            <h1 class="jumbotron-heading">Matthew Smith Burlage</h1>
-            <h4 class="jumbotron-heading collapse-div collapse show">Software Engineer</h4>
-            <p class="lead text-muted">Matthew is a software engineer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
-            <ul class="nav justify-content-center collapse-div collapse">
-                <li class="nav-item">
-                    <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>
-                </li>
-            </ul>
-
-            <ul class="nav justify-content-center collapse-div collapse show">
-                <li class="nav-item">
-                    <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#mywork">My Work</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#principles">Principles</a>
-                </li>
-            </ul>
+    <div class="bg-dark d-print-none text-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pt-5 pb-5">
+                    <h1 class="mt-3">Matthew Smith Burlage</h1>
+                    <h4 class="collapse-div collapse show">Software Engineer</h4>
+                    <p class="lead">
+                        Matthew is a software engineer focused on creating secure,
+                        powerful, efficient, and intuitive web systems.
+                    </p>
+                    <ul class="nav justify-content-center collapse-div collapse">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">
+                                About Me
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">
+                                Contact Me
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>
+                        </li>
+                    </ul>
+                    <ul class="nav justify-content-center collapse-div collapse show">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="#mywork">My Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="#principles">Principles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    {#    <section class="d-print-none bg-dark jumbotron text-center mb-0">#}
+    {#        <div class="container" id="home_wave">#}
+    {#            <h1 class="jumbotron-heading">Matthew Smith Burlage</h1>#}
+    {#            <h4 class="jumbotron-heading collapse-div collapse show">Software Engineer</h4>#}
+    {#            <p class="lead text-muted">Matthew is a software engineer focused on creating secure, powerful, efficient, and intuitive web systems.</p>#}
+    {#            <ul class="nav justify-content-center collapse-div collapse">#}
+    {#                <li class="nav-item">#}
+    {#                    <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>#}
+    {#                </li>#}
+    {#                <li class="nav-item">#}
+    {#                    <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>#}
+    {#                </li>#}
+    {#            </ul>#}
+    {##}
+    {#            <ul class="nav justify-content-center collapse-div collapse show">#}
+    {#                <li class="nav-item">#}
+    {#                    <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>#}
+    {#                </li>#}
+    {##}
+    {#                <li class="nav-item">#}
+    {#                    <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>#}
+    {#                </li>#}
+    {#                <li class="nav-item">#}
+    {#                    <a class="nav-link text-info" href="#mywork">My Work</a>#}
+    {#                </li>#}
+    {#                <li class="nav-item">#}
+    {#                    <a class="nav-link text-info" href="#principles">Principles</a>#}
+    {#                </li>#}
+    {#            </ul>#}
+    {#        </div>#}
+    {#    </section>#}
     <div class="d-none d-print-block">
         <div class="container pt-5 pb-5">
             <div class="row">
@@ -197,7 +245,7 @@
         </div>
     </section>
 
-    <div class="collapse pt-5 pb-5" id="resume">
+    <div class="collapse bg-light    pt-5 pb-5" id="resume">
         <div class="container">
 
             <div class="row">
@@ -275,7 +323,7 @@
                         </ul>
                     </div>
                     <div class="mb-2">
-                        PC Technician,
+                        Systems Technician,
                         <span class="font-weight-bold">Hall County Government</span>
                         <span class="text-muted small">2018{% if show_cur_numbers == 'True' %} | (770) 531-6712{% endif %}</span>
                     </div>
@@ -370,6 +418,11 @@
                                 <i class="fab fa-linkedin pr-2" aria-hidden="true"></i>/matthew-burlage
                             </a>
                         </li>
+                        <li>
+                            <a class="link-unstyled" href="https://www.linkedin.com/in/matthew-burlage" target="_blank">
+                                <i class="fab fa-github pr-2" aria-hidden="true"></i>/mattburlage
+                            </a>
+                        </li>
                     </ul>
                     <h5>Skills</h5>
                     <ul class="list-unstyled">
@@ -402,9 +455,6 @@
                         </li>
                         <li>
                             <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;BS, Computer Science, UNG, 2020 Graduation
-                        </li>
-                        <li>
-                            <i class="fas fa-certificate" aria-hidden="true"></i>&nbsp;&nbsp;CompTIA A+ Certification
                         </li>
                     </ul>
                     <hr>

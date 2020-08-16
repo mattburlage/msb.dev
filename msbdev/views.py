@@ -18,6 +18,12 @@ def index(request):
     return render(request, 'msbdev/msbdev2.html', context)
 
 
+def index2(request):
+    """ Handle standard page view"""
+    # Render template
+    return render(request, 'msbdev/msbdev3.html')
+
+
 @api_view(['POST'])
 def submit_form(request):
     serializer = ContactFormSerializer(data=request.data)
