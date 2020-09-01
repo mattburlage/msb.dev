@@ -27,6 +27,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       env:
-        DJANGO_KEY: hafhkjasdjfhasfhsdk
+        SECRET_KEY: EJTWHT5WU5THUHOEHITWERIOGHWEOIHTI
       run: |
         python manage.py test
