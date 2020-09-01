@@ -29,4 +29,4 @@ jobs:
       env:
         SECRET_KEY: EJTWHT5WU5THUHOEHITWERIOGHWEOIHTI
       run: |
-        python manage.py test
+        python devmanage.py test
