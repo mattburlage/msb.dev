@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from msbdev.models import AppSetting, ContactForm
+from msbdev.models import AppSetting, ContactForm, TextCopy, WorkItem
 from msbdev.serializers import ContactFormSerializer
 
 
@@ -14,6 +14,8 @@ def index(request):
     context = {
         'show_numbers': AppSetting.get_setting('show_numbers'),
         'show_cur_numbers': AppSetting.get_setting('show_cur_numbers'),
+        'about_me_text': TextCopy.get_html('about_me_text'),
+        'work_items': WorkItem.objects.filter(active=True).order_by('order'),
     }
     return render(request, 'msbdev/msbdev2.html', context)
 
