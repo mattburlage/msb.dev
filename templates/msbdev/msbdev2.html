@@ -36,6 +36,15 @@
             text-decoration: inherit;
         }
 
+        .link-discreet {
+            color: inherit;
+            text-decoration: underline dotted;
+        }
+        .link-discreet:hover {
+            color: inherit;
+            text-decoration: underline;
+        }
+
         .small-md {
             font-size: 85%;
         }
@@ -60,9 +69,9 @@
         .nyc-bg-2 {
             backdrop-filter: brightness(35%);
             height: 100%;
-            {#display: flex;#}
-            {#justify-content: center;#}
-            {#align-items: center;#}
+        {#display: flex;#}
+        {#justify-content: center;#}
+        {#align-items: center;#}
         }
 
         .nyc-bg-link {
@@ -136,8 +145,8 @@
                             {#                                </a>#}
                             {#                            </li>#}
                             <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" onclick="toggleResume()" href="#">Back</a>
                             </li>
+                            <a class="nav-link text-info nyc-bg-link" onclick="toggleResume()" href="#">Back</a>
                         </ul>
                         <ul class="nav justify-content-center collapse-div collapse show">
                             <li class="nav-item">
@@ -187,16 +196,108 @@
                 <img class="rounded-circle" src="https://i.ibb.co/Mp2Y9gy/me.jpg">
             </div>
             <div class="col-8" data-aos="fade-right">
-                <h4 class="jumbotron-heading">About Me</h4>
+                <h4 class="jumbotron-heading mb-3">Hello World, I'm Matthew.</h4>
 
                 <ul class="list-unstyled">
-                    {#                        <li>#}
-                    {#                            I am a Software Engineer that is passionate about improving lives thru software and technology. I love building things to increase efficiency and automation, and#}
-                    {#                        </li>#}
                     <li>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        I am a software engineer focused on
+                        <a href="#" class="link-discreet" onclick="addlInfoSection('improvelives'); return false;">
+                            improving people’s lives thru technology.
+                        </a>
+                        Even before becoming an engineer, I always focused on
+                        <a href="#" class="link-discreet" onclick="addlInfoSection('otherjobs'); return false;">
+                            improving efficiency thru technology in every job
+                        </a>
+                        I have ever had.
+                        As an engineer, it has been my focus to build secure software
+                        that removes
+                        <a href="#" class="link-discreet" onclick="addlInfoSection('duplicatework'); return false;">
+                            duplicate work,
+                        </a>
+                        <a href="#" class="link-discreet" onclick="addlInfoSection('badprocess'); return false;">
+                            bad processes,
+                        </a> and
+                        <a href="#" class="link-discreet" onclick="addlInfoSection('waste'); return false;">
+                            waste.
+                        </a>
+                        Take a look at my
+                        <a class="link-discreet" onclick="toggleResume()" href="#">resume</a>,
+                        <a href="#mywork" class="link-discreet">previous work</a>, or
+                        <a href="#principles" class="link-discreet">development principles</a>
+                        to learn more about me.
+                        Or reach out and see what I can do for your organization!
                     </li>
                 </ul>
+                <div class="mt-3 collapse addl-info"  id="addl-info-improvelives">
+                    <h5>Improving people's lives with technology</h5>
+                    <h6>My Thoughts</h6>
+                    The ultimate purpose for technology and software is to improve the lives of the user.
+                    But I’m sure I’m not the only one who has said the phrase “it’s great when it works”
+                    when an app has seemed to be more trouble than it was worth.
+                    My philosophy with software is that it should just work.
+                    You shouldn’t need to attend a training to use a piece of software.
+                    Instead, it should be intuitive enough to be used with limited instruction
+                    and should be self-documenting when a more complicated interface is needed.
+                </div>
+                <div class="mt-3 collapse addl-info" id="addl-info-otherjobs">
+                    <h5>Using Technology in My Past Jobs</h5>
+                    I have always used technology to make processes easier,
+                    even when my job had nothing to do with software development.
+                    As the 19 year old stage manager at the
+                    <a class="link-unstyled" href="https://www.youtube.com/watch?v=7uJ1tRRrF3c" target="_blank">
+                        magic department
+                    </a>
+                    for
+                    a children's performance arts sleep-away camp, I developed
+                    an Access database to handle the organization of 100+ children
+                    across six magic shows to make sure that visitors could watch
+                    their kids saw their friends and half or whatever other crazy
+                    routine they had come up with. When I worked as a manager and
+                    bartender for a couple of NYC restaurants and bars, I was always
+                    the go-to for POS integration, website maintenance, and all other
+                    technology needs. I have a passion for automation and process
+                    simplification and am always evaluating if there are better ways
+                    to do things.
+                </div>
+                <div class="mt-3 collapse addl-info" id="addl-info-duplicatework">
+                    <h5>Eliminating Duplicate Work</h5>
+                    When I was a PC Technician, I would always be on the lookout for
+                    ways to reduce duplicate work. If I had to do the same task more
+                    than a few times, I would always evaluate if there was a way to
+                    script or otherwise automate it, and often there was. A piece of
+                    software that we had to install on each computer required running
+                    seven different MSI file as well as some registry edits and other
+                    configuration steps. I was able to script that down to five clicks
+                    of the mouse.
+                </div>
+                <div class="mt-3 collapse addl-info" id="addl-info-badprocess">
+                    <h5>Eliminating Bad Processes</h5>
+                    My first task as Software Developer in my current role was to improve
+                    the process of IT Access form submission, which had a terrible compliance
+                    rate with the then-current method of emailing a PDF.  I created a system to
+                    handle this process as well as automate many of the user creation steps
+                    required by our Active Directory environment. In addition, we found that
+                    the entire process of on-boarding new employees required entering the same
+                    information seven different times. I was able to expand the system to handle
+                    this which now only requires a single point of data entry for HR.
+                </div>
+                <div class="mt-3 collapse addl-info" id="addl-info-waste">
+                    <h5>Eliminating Waste</h5>
+                    Before my work as a software developer, the HR department for my current
+                    organization used emailing PDFs around for their approval workflow. In addition,
+                    each user would typically print the PDF for their own records, creating possibly 7
+                    different paper copies of the same document, leading to wasted time, money, and
+                    environmental harm for no good reason. The system I build them now acts as the source
+                    of truth requiring no printing whatsoever to archive the records in perpetuity.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 collapse addl-info" >
+                Additional Info about other jobs
+            </div>
+            <div class="col-12 collapse addl-info">
+
             </div>
         </div>
     </div>
@@ -633,6 +734,11 @@
             arrow.fadeOut()
         })
     })
+
+    function addlInfoSection(section) {
+        $('.addl-info').collapse('hide')
+        $('#addl-info-' + section).collapse('show')
+    }
 
     AOS.init({
         once: true,
