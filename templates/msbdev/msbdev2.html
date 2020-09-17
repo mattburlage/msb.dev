@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load calculations %}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="https://msb.dev/static/favicon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://www.nertzboard.com/static/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.nertzboard.com/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://msb.dev/static/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://msb.dev/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://msb.dev/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://msb.dev/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://msb.dev/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://msb.dev/static/favicon.png">
 
     <meta name="msapplication-TileColor" content="#343A40">
-    <meta name="msapplication-TileImage" content="https://www.nertzboard.com/static/favicon.png">
+    <meta name="msapplication-TileImage" content="https://msb.dev/static/favicon.png">
     <meta name="theme-color" content="#343A40">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -56,6 +57,7 @@
         html, body {
             scroll-behavior: smooth;
             height: 100%;
+            {#overflow-x: hidden;#}
         }
 
         .nyc-bg {
@@ -84,6 +86,10 @@
 
         #spacing-top {
             transition: all .5s linear;
+        }
+
+        .hide-horiz-overflow {
+            overflow: hidden;
         }
 
         .arrow {
@@ -312,41 +318,64 @@
         </div>
 
         <div class="row">
-            <div id="card1" class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-                <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including
-                    approval workflows and minutes capture.</p> </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>
-                    <div class="card-body">
-                        <p class="card-text"><strong>NertzBoard</strong><br>
-
-                            NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>
-                    <div class="card-body">
-                        <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group d-none">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+            {% for item in work_items %}
+                <div id="card{{ forloop.counter }}" class="col-12 col-md-6 col-lg-4 cards" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card mb-4 box-shadow">
+                        {% if item.image_url_safe %}
+                            {#                        <img alt="img" class="card-img-top" src="{{ item.image_url_safe }}"/>#}
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="card-text">
+                                <strong>{{ item.name_safe }}</strong>
+                                {% if item.link %}
+                                    <a class="small text-muted ml-2" href="{{ item.link }}">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                {% endif %}
+                                {% if item.tech_used %}
+                                    <br/><span class="text-muted small">{{ item.tech_used }}</span>
+                                {% endif %}
+                                <div>{{ item.short_text }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
+            {#            <div id="card1" class="col-md-4" data-aos="fade-up" data-aos-delay="0">#}
+            {#                <div class="card mb-4 box-shadow">#}
+            {#                    <img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including#}
+            {#                    approval workflows and minutes capture.</p> </div>#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">#}
+            {#                <div class="card mb-4 box-shadow">#}
+            {#                    <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>#}
+            {#                    <div class="card-body">#}
+            {#                        <p class="card-text"><strong>NertzBoard</strong><br>#}
+            {##}
+            {#                            NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.#}
+            {#                        </p>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">#}
+            {#                <div class="card mb-4 box-shadow">#}
+            {#                    <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>#}
+            {#                    <div class="card-body">#}
+            {#                        <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>#}
+            {#                        <div class="d-flex justify-content-between align-items-center">#}
+            {#                            <div class="btn-group d-none">#}
+            {#                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
         </div>
     </div>
 </div>
 
-<section class="jumbotron jumbotron-fluid text-center mb-0 collapse show" id='principles'>
+<section class="jumbotron hide-horiz-overflow jumbotron-fluid text-center mb-0 collapse show" id='principles'>
     <div class="container">
         <h4 class="jumbotron-heading" data-aos="zoom-in" data-aos-anchor="#prin2">My Development Principles</h4>
         <ul class="list-unstyled" data-aos="fade-right" data-aos-anchor="#prin2" id="prin1">
@@ -733,11 +762,33 @@
             scrolled = true;
             arrow.fadeOut()
         })
+
+        calcCardDelay();
+
+        $(window).resize(() => {
+            calcCardDelay();
+        })
     })
 
     function addlInfoSection(section) {
         $('.addl-info').collapse('hide')
         $('#addl-info-' + section).collapse('show')
+    }
+
+    function calcCardDelay (val) {
+        const cards = $('.cards');
+        let columns = 3;
+
+        const width = $(window).width();
+        if (width < 768) columns = 1;
+        else if (width < 992) columns = 2;
+        console.log('columns', columns)
+
+        cards.each(index => {
+            const newDelay = (index % columns) * 150
+            console.log('card ' + (index + 1) + ' delay', newDelay)
+            $('#card' + (index+1)).attr('data-aos-delay', newDelay)
+        })
     }
 
     AOS.init({

@@ -51,11 +51,23 @@ class WorkItem(models.Model):
     active = models.BooleanField(default=False)
     order = models.IntegerField()
     label = models.CharField(max_length=64, null=True, blank=True)
-    text = models.TextField(null=True, blank=True)
-    image = models.ImageField(upload_to='images/')
+    tech_used = models.CharField(max_length=64, null=True, blank=True)
+    short_text = models.TextField(null=True, blank=True)
+    long_text = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    image_url = models.URLField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
 
     def name_safe(self):
         return self.label if self.label else self.name
+
+    def image_url_safe(self):
+        if self.image:
+            return self.image.url
+        elif self.image_url:
+            return self.image_url
+        else:
+            return None
 
     def __str__(self):
         return self.name
