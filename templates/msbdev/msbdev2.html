@@ -27,8 +27,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title>Matthew Smith Burlage - Software Engineer</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- Custom styles for this template -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         .link-unstyled {
             color: inherit;
@@ -43,174 +44,191 @@
             .small-md {font-size: 100%;}
         }
 
+        html, body {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        .nyc-bg {
+            background-image: url("https://www.msb.dev/static/msbdev/img/nyc5.jpg");
+            {#background-position: 100%;#}
+            background-size: cover;
+            height: 100%;
+            transition: all .5s linear;
+        }
+
+        .nyc-bg-2 {
+            backdrop-filter: brightness(35%);
+            height: 100%;
+        {#transition: all .5s linear;#}
+        }
+
+        .nyc-bg-link {
+            filter: brightness(125%);
+        }
+
+        .nyc-bg-text {
+            color: #dcdcdc;
+        }
+
+        .arrow {
+            color: #dcdcdc;
+            text-align: center;
+            margin: 8% 0;
+            display: none;
+        }
+        .bounce {
+            -moz-animation: bounce 2s infinite;
+            -webkit-animation: bounce 2s infinite;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
     </style>
 </head>
 <body class="bg-dark">
-<header>
-    <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About Me</h4>
-                    <p class="text-muted">Matthew has been working in the tech industry for more than a decade in a variety of different positions. Throughout his career, his major focus has been simplification and efficiency through software development. Reach out to us to see if we have a solution to meet your needs.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
-                    <input type="hidden" name="csrfmiddlewaretoken" value="iMbz2OKpQiLOwICEqsA8irQxgm7XBH89fSQvjGTF0OQtKIX0H5ppZusXNy8NoE8s">
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control form-control-sm" placeholder="Your email address" maxlength="254" required id="id_email">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="note" cols="40" rows="2" class="form-control form-control-sm" placeholder="Leave a note" required id="id_note">
-                        </textarea>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-8">
-                                <span id="msgnotify" class="text-success" style="display: none;">
-                                    <i class="fas fa-check mr-4 ml-0"></i>Message Sent
-                                </span>
-                            </div>
-                            <div class="col-4 text-right">
-                                <button type='button' onclick="submitForm()" class="btn btn-light btn-sm">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
+
+<div class="nyc-bg d-print-none">
+    <div class="nyc-bg-2">
+        <div class="navbar box-shadow">
+            <div class="container d-flex">
+                <a href="#" class="navbar-brand nyc-bg-text d-flex align-items-center"> <strong>msb</strong>.dev</a>
+            </div>
+        </div>
+
+        <div style="height: 25%"  class="collapse show collapse-div"></div>
+
+        <div class="d-print-none nyc-bg-text text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="mt-3">Matthew Smith Burlage</h1>
+                        <h4 class="collapse-div collapse show">Software Engineer</h4>
+                        <p class="lead">
+                            Focused on creating secure, powerful, efficient, and intuitive web systems.
+                        </p>
+                        <ul class="nav justify-content-center collapse-div collapse">
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" onclick='print(); return false;' href="#">
+                                    Print Me
+                                </a>
+                            </li>
+                            {#                            <li class="nav-item">#}
+                            {#                                <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">#}
+                            {#                                    Contact Me#}
+                            {#                                </a>#}
+                            {#                            </li>#}
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" onclick="toggleResume()" href="#">Back</a>
+                            </li>
+                        </ul>
+                        <ul class="nav justify-content-center collapse-div collapse show">
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" href="#aboutme">About Me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" onclick="toggleResume()" href="#">My Resume</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" href="#mywork">My Work</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" href="#principles">Principles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-info nyc-bg-link" onclick='showContactForm(); return false;' href="#">Contact Me</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex">
-            <a href="#" class="navbar-brand d-flex align-items-center"> <strong>msb</strong>.dev</a>
-            <span class="pull-right">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </span>
+
+        <div style="height: 15%"></div>
+
+        <div class="arrow bounce collapse show">
+            <i class="fa fa-arrow-down fa-2x"></i>
         </div>
     </div>
-</header>
+</div>
 
-<main role="main">
-    <div class="bg-dark d-print-none text-light text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 pt-5 pb-5">
-                    <h1 class="mt-3">Matthew Smith Burlage</h1>
-                    <h4 class="collapse-div collapse show">Software Engineer</h4>
-                    <p class="lead">
-                        Matthew is a software engineer focused on creating secure,
-                        powerful, efficient, and intuitive web systems.
-                    </p>
-                    <ul class="nav justify-content-center collapse-div collapse">
-                        <li class="nav-item">
-                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">
-                                About Me
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">
-                                Contact Me
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>
-                        </li>
-                    </ul>
-                    <ul class="nav justify-content-center collapse-div collapse show">
-                        <li class="nav-item">
-                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">About Me</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" href="#mywork">My Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" href="#principles">Principles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>
-                        </li>
-                    </ul>
-                </div>
+<div class="d-none d-print-block">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4 text-center">Matthew Smith Burlage</h1>
+                <p class="lead text-center collapse"><b>Software Engineer</b></p>
+                <p class="lead text-center">Matthew is a software engineer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
             </div>
         </div>
     </div>
+</div>
+<section class="jumbotron jumbotron-fluid text-center mb-0 collapse show" id='aboutme'>
+    <div class="container">
+        <div class="row">
+            <div class="col-4" data-aos="fade-left">
+                <img class="rounded-circle" src="https://i.ibb.co/Mp2Y9gy/me.jpg">
+            </div>
+            <div class="col-8" data-aos="fade-right">
+                <h4 class="jumbotron-heading">About Me</h4>
 
-    {#    <section class="d-print-none bg-dark jumbotron text-center mb-0">#}
-    {#        <div class="container" id="home_wave">#}
-    {#            <h1 class="jumbotron-heading">Matthew Smith Burlage</h1>#}
-    {#            <h4 class="jumbotron-heading collapse-div collapse show">Software Engineer</h4>#}
-    {#            <p class="lead text-muted">Matthew is a software engineer focused on creating secure, powerful, efficient, and intuitive web systems.</p>#}
-    {#            <ul class="nav justify-content-center collapse-div collapse">#}
-    {#                <li class="nav-item">#}
-    {#                    <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>#}
-    {#                </li>#}
-    {#                <li class="nav-item">#}
-    {#                    <a class="nav-link text-info" onclick="toggleResume()" href="#">Back</a>#}
-    {#                </li>#}
-    {#            </ul>#}
-    {##}
-    {#            <ul class="nav justify-content-center collapse-div collapse show">#}
-    {#                <li class="nav-item">#}
-    {#                    <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">Contact Me</a>#}
-    {#                </li>#}
-    {##}
-    {#                <li class="nav-item">#}
-    {#                    <a class="nav-link text-info" onclick="toggleResume()" href="#">My Resume</a>#}
-    {#                </li>#}
-    {#                <li class="nav-item">#}
-    {#                    <a class="nav-link text-info" href="#mywork">My Work</a>#}
-    {#                </li>#}
-    {#                <li class="nav-item">#}
-    {#                    <a class="nav-link text-info" href="#principles">Principles</a>#}
-    {#                </li>#}
-    {#            </ul>#}
-    {#        </div>#}
-    {#    </section>#}
-    <div class="d-none d-print-block">
-        <div class="container pt-5 pb-5">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="display-4 text-center">Matthew Smith Burlage</h1>
-                    <p class="lead text-center collapse"><b>Software Engineer</b></p>
-                    <p class="lead text-center">Matthew is a software developer focused on creating secure, powerful, efficient, and intuitive web systems.</p>
-                </div>
+                <ul class="list-unstyled">
+                    {#                        <li>#}
+                    {#                            I am a Software Engineer that is passionate about improving lives thru software and technology. I love building things to increase efficiency and automation, and#}
+                    {#                        </li>#}
+                    <li>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="album py-5 bg-light collapse show" id='mywork'>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow"><img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including
-                        approval workflows and minutes capture.</p> </div> </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>
-                        <div class="card-body">
-                            <p class="card-text"><strong>NertzBoard</strong><br>
+</section>
 
-                                NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.
-                            </p>
-                        </div>
+<div class="album py-5 bg-light collapse show" id='mywork'>
+    <div class="container">
+        <div class="row text-center mb-3">
+            <div class="col-12" data-aos="zoom-in">
+                <h4 class="jumbotron-heading text-center">My Work</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including
+                    approval workflows and minutes capture.</p> </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>
+                    <div class="card-body">
+                        <p class="card-text"><strong>NertzBoard</strong><br>
+
+                            NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>
-                        <div class="card-body">
-                            <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group d-none">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>
+                    <div class="card-body">
+                        <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group d-none">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                             </div>
                         </div>
                     </div>
@@ -218,41 +236,44 @@
             </div>
         </div>
     </div>
-    <section class="jumbotron text-center mb-0 collapse show" id='principles'>
-        <div class="container">
-            <h4 class="jumbotron-heading">My Development Principles</h4>
-            <ul class="list-unstyled">
-                <li>
-                    <h6 class="mt-3">Security First </h6>In today's world, the value of data is ever increasing. With this in mind, any software system should consider security from the outset. From design through implementation and maintenance, security should be front and center.  No system is worth a penny if it is insecure.
-                </li>
-            </ul>
-            <ul class="list-unstyled">
-                <li>
-                    <h6>
-                        Ease of Use </h6>
-                    The number one goal of any system should, outside security, be to create a wonderful user experience for end users and admins alike.  Users should be able to focus on their work, not on learning new systems. This can be accomplished by focusing the experience around the tasks that your users need to complete. All a user needs to know is what their end goal is, and the system should take care of putting the information they need in front of them or whomever needs it.
-                </li>
-            </ul>
+</div>
 
-            <ul class="list-unstyled">
-                <li>
-                    <h6>
-                        Embrace and Prepare for Change </h6>
-                    Business needs change regularly, and any successful enterprise must have software that can adjust with them. Software solutions, therefore, must be customizable and built to handle changing needs.  This includes building them from day one in a way that makes later upgrades a breeze.
-                </li>
-            </ul>
+<section class="jumbotron jumbotron-fluid text-center mb-0 collapse show" id='principles'>
+    <div class="container">
+        <h4 class="jumbotron-heading" data-aos="zoom-in">My Development Principles</h4>
+        <ul class="list-unstyled" data-aos="fade-right">
+            <li>
+                <h6 class="mt-3">Security First </h6>In today's world, the value of data is ever increasing. With this in mind, any software system should consider security from the outset. From design through implementation and maintenance, security should be front and center.  No system is worth a penny if it is insecure.
+            </li>
+        </ul>
+        <ul class="list-unstyled" data-aos="fade-left">
+            <li>
+                <h6>
+                    Ease of Use </h6>
+                The number one goal of any system should, outside security, be to create a wonderful user experience for end users and admins alike.  Users should be able to focus on their work, not on learning new systems. This can be accomplished by focusing the experience around the tasks that your users need to complete. All a user needs to know is what their end goal is, and the system should take care of putting the information they need in front of them or whomever needs it.
+            </li>
+        </ul>
 
-        </div>
-    </section>
+        <ul class="list-unstyled" data-aos="fade-right">
+            <li>
+                <h6>
+                    Embrace and Prepare for Change </h6>
+                Business needs change regularly, and any successful enterprise must have software that can adjust with them. Software solutions, therefore, must be customizable and built to handle changing needs.  This includes building them from day one in a way that makes later upgrades a breeze.
+            </li>
+        </ul>
 
-    <div class="collapse bg-light    pt-5 pb-5" id="resume">
-        <div class="container">
+    </div>
+</section>
 
-            <div class="row">
-                <div class="col-md-8">
+<div class="collapse bg-light pt-5 pb-5" id="resume">
+    <div class="container">
 
-                    <h5>Projects</h5>
+        <div class="row">
+            <div class="col-md-8">
 
+                <h5>Projects</h5>
+
+                <div>
                     <div class="mb-2">
                         <span class="font-weight-bold">Agenda Management</span>&nbsp;&nbsp;
                         <span class="text-muted small">React, Django, PostgreSQL, IIS</span>
@@ -266,237 +287,238 @@
                         any supporting documents, and conversion of any attachments to PDF. Those PDFs and agendas
                         are also uploaded to a public site to comply with any publication requirements that may exist.
                     </div>
-
-                    <div class="mb-2">
-                        <span class="font-weight-bold">Five Star Ordering</span>&nbsp;&nbsp;
-                        <span class="text-muted small">React, Django, PostgreSQL, PythonAnywhere</span>
-                    </div>
-                    <div class="mb-4">
-                        The Five Star ordering system is a fixed-rate restaurant online ordering platform that supports
-                        both pickup and delivery orders. It allows for address verification and integrates with Stripe
-                        payment processing.  The platform allows new restaurants to be added with zero additional coding
-                        and can be completed as quickly as a few hours.
-                    </div>
-
-
-                    <div class="mb-2">
-                        <span class="font-weight-bold">Position Control</span>&nbsp;&nbsp;
-                        <span class="text-muted small">Django, React, Microsoft SQL, IIS</span>
-                    </div>
-                    <div class="mb-4">
-                        The Position Control system is designed to handle the tracking and paperwork for all employee
-                        records. It handles all paperwork including new hires, job changes, termination, and more.
-                        It also handles the creation and budgeting of new positions. It allows approval on both the
-                        department and administration level. It also handles automatic creation
-                        of Active Directory user accounts and uses Active Directory for user authentication.
-                        The Finance department can use the system to calculate labor costs for individual departments or
-                        the whole county, and projects future budgets.
-                    </div>
-                    {##}
-                    {#                    <div class="mb-2">#}
-                    {#                        <span class="font-weight-bold">Employee Reimbursement System</span><br>#}
-                    {#                        <span class="text-muted small">Django, jQuery, Microsoft SQL, IIS</span>#}
-                    {#                    </div>#}
-                    {#                    <div class="mb-4">#}
-                    {#                        The Travel Expense system allows employees to file for reimbursement for business expenses.#}
-                    {#                        It allows for department approval to occur before submitting, and ensures specific rules about#}
-                    {#                        reimbursement are followed.  Once approved, the form and any attachments are combined into a#}
-                    {#                        single PDF and sent to Finance for processing.#}
-                    {#                    </div>#}
-                    <hr>
-
-                    <h5>Work Experience</h5>
-                    <div class="mb-2">
-                        Software Developer,
-                        <span class="font-weight-bold">Hall County Government</span>
-                        <span class="text-muted small">2019 - Current{% if show_cur_numbers == 'True' %} | (770) 531-6712{% endif %}</span>
-                    </div>
-                    <div>
-                        <ul class="small-md">
-                            <li>Developed internal and external systems to manage Hall County’s day to day business needs.</li>
-                            <li>Management systems include Agenda, Personnel, Fleet, Finance, Policies, and IT Access.</li>
-                            <li>Started new Enterprise Application Development division from the ground up.</li>
-                            <li>Made foundational decisions on tools, design paradigms, methodology, and stack.</li>
-                            <li>Implemented thorough and robust error, tracking, and development lifecycle tools.</li>
-                            <li>Maintained thorough documentation for users, admins, and future developers thru comments.</li>
-                            <li>Installed, configured, and managed development, staging, and production servers.</li>
-                        </ul>
-                    </div>
-                    <div class="mb-2">
-                        Systems Technician,
-                        <span class="font-weight-bold">Hall County Government</span>
-                        <span class="text-muted small">2018{% if show_cur_numbers == 'True' %} | (770) 531-6712{% endif %}</span>
-                    </div>
-                    <div>
-                        <ul class="small-md">
-                            <li>Co-managed enterprise Active Directory environment with 1300 end units plus other hardware.</li>
-                            <li>Used scripting in order to increase speed of deployments, software installation, and repairs.</li>
-                            <li>Co-managed Windows Servers under guidance of Systems Administrator, including IIS & SQL.</li>
-                        </ul>
-                    </div>
-                    <div class="mb-2">
-                        Remote and In Store Repair Technician and Leader,
-                        <span class="font-weight-bold">Geek Squad</span>
-                        <span class="text-muted small">2014 - 2017{% if show_numbers == 'True' %} | (866) 692-2947{% endif %}</span>
-                    </div>
-                    <div>
-                        <ul class="small-md">
-                            <li>Assisted clients remotely with repairs, including malware and Windows and macOS issues.</li>
-                            <li>Achieved Rock Star status from first week in remote. (NPS 95.5, Resolves per hour 1.74)</li>
-                            <li>Championed improvement of process quality to provide better client experiences.</li>
-                            <li>Educated agents in the tools and strategies to improve efficiency and quality.</li>
-                            <li>Acted as Sales Floor Leader. Regularly handles delicate issues throughout store.</li>
-                            <li>Managed, with guidance, scheduling and staffing, including helping with hiring.</li>
-                        </ul>
-                    </div>
-
-                    {#                    <div class="mb-2">#}
-                    {#                        Technician#}
-                    {#                        <span class="font-weight-bold">TelAid Industries</span>#}
-                    {#                        <span class="text-muted small">2014{% if show_numbers == 'True' %} | (860) 439-7312{% endif %}</span>#}
-                    {#                    </div>#}
-                    {#                    <div>#}
-                    {#                        <ul class="small-md">#}
-                    {#                            <li>Conceptualized, designed, and implemented processes to help improve efficiency.</li>#}
-                    {#                            <li>Aided in configuration, imaging, repair, labeling, and related prep of hardware.</li>#}
-                    {#                            <li>Configured routers, switches, servers, desktops, laptops, phones, and more.</li>#}
-                    {#                            <li>Assisted external and internal stakeholders with technical questions.</li>#}
-                    {#                        </ul>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="mb-2">#}
-                    {#                        Floor Manager/IT Specialist,#}
-                    {#                        <span class="font-weight-bold">Telio Restaurant</span>#}
-                    {#                        <span class="text-muted small">2011 - 2013{% if show_numbers == 'True' %} | (917) 705-0129{% endif %}</span>#}
-                    {#                    </div>#}
-                    {#                    <div>#}
-                    {#                        <ul class="small-md">#}
-                    {#                            <li>Served as tech advisor on design, functionality, and implementation of all systems.</li>#}
-                    {#                            <li>Advised planning and design of new quick service and bar/lounge concepts/menus.</li>#}
-                    {#                            <li>Managed wait and bar staff resulting in maximized efficiency and sales.</li>#}
-                    {#                        </ul>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="mb-2">#}
-                    {#                        Stage Manager (Magic Department),#}
-                    {#                        <span class="font-weight-bold">French Woods Festival for the Performing Arts</span>#}
-                    {#                        <span class="text-muted small">2007 – 2010{% if show_numbers == 'True' %} | (954) 346-7455{% endif %}</span>#}
-                    {#                    </div>#}
-                    {#                    <div>#}
-                    {#                        <ul class="small-md">#}
-                    {#                            <li>Organized end of session shows for 100+ performers using MS Access database.</li>#}
-                    {#                            <li>Experience with theater management including lights and sounds systems.</li>#}
-                    {#                        </ul>#}
-                    {#                        </ul>#}
-                    {#                    </div>#}
-
                 </div>
-                <div class="col-md-4">
-                    <div class="text-center mb-5">
-                        <img src="https://www.msb.dev/static/favicon.png" alt="" class="img-responsive" style="max-width: 100px">
-                    </div>
 
-                    <h5>Contact Information</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a class="link-unstyled" href="tel:6464703317" target="_blank">
-                                <i class="fas fa-phone pr-2" aria-hidden="true"></i>(646) 470-3317
-                            </a>
-                        </li>
-                        <li>
-                            <a class="link-unstyled" href="https://www.msb.dev" target="_blank">
-                                <i class="fas fa-globe pr-2" aria-hidden="true"></i>www.msb.dev
-                            </a>
-                        </li>
-                        <li>
-                            <a class="link-unstyled" href="mailto:matt@msb.dev">
-                                <i class="fas fa-at pr-2" aria-hidden="true"></i>matt@msb.dev
-                            </a>
-                        </li>
-                        <li>
-                            <a class="link-unstyled" href="https://www.linkedin.com/in/matthew-burlage" target="_blank">
-                                <i class="fab fa-linkedin pr-2" aria-hidden="true"></i>/matthew-burlage
-                            </a>
-                        </li>
-                        <li>
-                            <a class="link-unstyled" href="https://www.linkedin.com/in/matthew-burlage" target="_blank">
-                                <i class="fab fa-github pr-2" aria-hidden="true"></i>/mattburlage
-                            </a>
-                        </li>
+                <div class="mb-2">
+                    <span class="font-weight-bold">Five Star Ordering</span>&nbsp;&nbsp;
+                    <span class="text-muted small">React, Django, PostgreSQL, PythonAnywhere</span>
+                </div>
+                <div class="mb-4">
+                    The Five Star ordering system is a fixed-rate restaurant online ordering platform that supports
+                    both pickup and delivery orders. It allows for address verification and integrates with Stripe
+                    payment processing.  The platform allows new restaurants to be added with zero additional coding
+                    and can be completed as quickly as a few hours.
+                </div>
+
+
+                <div class="mb-2">
+                    <span class="font-weight-bold">Position Control</span>&nbsp;&nbsp;
+                    <span class="text-muted small">Django, React, Microsoft SQL, IIS</span>
+                </div>
+                <div class="mb-4">
+                    The Position Control system is designed to handle the tracking and paperwork for all employee
+                    records. It handles all paperwork including new hires, job changes, termination, and more.
+                    It also handles the creation and budgeting of new positions. It allows approval on both the
+                    department and administration level. It also handles automatic creation
+                    of Active Directory user accounts and uses Active Directory for user authentication.
+                    The Finance department can use the system to calculate labor costs for individual departments or
+                    the whole county, and projects future budgets.
+                </div>
+                {##}
+                {#                    <div class="mb-2">#}
+                {#                        <span class="font-weight-bold">Employee Reimbursement System</span><br>#}
+                {#                        <span class="text-muted small">Django, jQuery, Microsoft SQL, IIS</span>#}
+                {#                    </div>#}
+                {#                    <div class="mb-4">#}
+                {#                        The Travel Expense system allows employees to file for reimbursement for business expenses.#}
+                {#                        It allows for department approval to occur before submitting, and ensures specific rules about#}
+                {#                        reimbursement are followed.  Once approved, the form and any attachments are combined into a#}
+                {#                        single PDF and sent to Finance for processing.#}
+                {#                    </div>#}
+                <hr>
+
+                <h5>Work Experience</h5>
+                <div class="mb-2">
+                    Software Developer,
+                    <span class="font-weight-bold">Hall County Government</span>
+                    <span class="text-muted small">2019 - Current{% if show_cur_numbers == 'True' %} | (770) 531-6712{% endif %}</span>
+                </div>
+                <div>
+                    <ul class="small-md">
+                        <li>Developed internal and external systems to manage Hall County’s day to day business needs.</li>
+                        <li>Management systems include Agenda, Personnel, Fleet, Finance, Policies, and IT Access.</li>
+                        <li>Started new Enterprise Application Development division from the ground up.</li>
+                        <li>Made foundational decisions on tools, design paradigms, methodology, and stack.</li>
+                        <li>Implemented thorough and robust error, tracking, and development lifecycle tools.</li>
+                        <li>Maintained thorough documentation for users, admins, and future developers thru comments.</li>
+                        <li>Installed, configured, and managed development, staging, and production servers.</li>
                     </ul>
-                    <h5>Skills</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <i class="fab fa-react" aria-hidden="true"></i>&nbsp;&nbsp;React.js, Redux, React Router
-                        </li>
-                        <li>
-                            <i class="fab fa-python" aria-hidden="true"></i>&nbsp;&nbsp;Python, Django, DRF, Flask
-                        </li>
-                        <li>
-                            <i class="fab fa-node-js" aria-hidden="true"></i>&nbsp;&nbsp;Webpack, NPM, Meteor.js
-                        </li>
-                        {#                        <li>#}
-                        {#                            <i class="fab fa-php"></i>&nbsp;&nbsp;PHP, PDO#}
-                        {#                        </li>#}
-                        <li>
-                            <i class="fas fa-database" aria-hidden="true"></i>&nbsp;&nbsp;PostgreSQL, MS SQL, MongoDB
-                        </li>
-                        <li>
-                            <i class="fas fa-server" aria-hidden="true"></i>&nbsp;&nbsp;IIS, Ubuntu, wfastcgi
-                        </li>
-                        <li>
-                            <i class="fas fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;Git, GitHub, Jira, Sentry
-                        </li>
-                        <li>
-                            <i class="fas fa-ellipsis-h"></i>&nbsp;&nbsp;PHP, Java, JSON
-                        </li>
+                </div>
+                <div class="mb-2">
+                    Systems Technician,
+                    <span class="font-weight-bold">Hall County Government</span>
+                    <span class="text-muted small">2018{% if show_cur_numbers == 'True' %} | (770) 531-6712{% endif %}</span>
+                </div>
+                <div>
+                    <ul class="small-md">
+                        <li>Co-managed enterprise Active Directory environment with 1300 end units plus other hardware.</li>
+                        <li>Used scripting in order to increase speed of deployments, software installation, and repairs.</li>
+                        <li>Co-managed Windows Servers under guidance of Systems Administrator, including IIS & SQL.</li>
                     </ul>
-                    <h5>Education</h5>
-                    <ul class="list-unstyled small">
-                        <li>
-                            <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;BS, Computer Science, UNG, 2020 Graduation
-                        </li>
-                        <li>
-                            <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;TA, Software Engineering, 2020
-                        </li>
+                </div>
+                <div class="mb-2">
+                    Remote and In Store Repair Technician and Leader,
+                    <span class="font-weight-bold">Geek Squad</span>
+                    <span class="text-muted small">2014 - 2017{% if show_numbers == 'True' %} | (866) 692-2947{% endif %}</span>
+                </div>
+                <div>
+                    <ul class="small-md">
+                        <li>Assisted clients remotely with repairs, including malware and Windows and macOS issues.</li>
+                        <li>Achieved Rock Star status from first week in remote. (NPS 95.5, Resolves per hour 1.74)</li>
+                        <li>Championed improvement of process quality to provide better client experiences.</li>
+                        <li>Educated agents in the tools and strategies to improve efficiency and quality.</li>
+                        <li>Acted as Sales Floor Leader. Regularly handles delicate issues throughout store.</li>
+                        <li>Managed, with guidance, scheduling and staffing, including helping with hiring.</li>
                     </ul>
-                    <hr>
-                    <h5>Open Source Projects</h5>
-                    <p class="small text-muted">Here are a few open source things I have built.</p>
-                    <h6>create-django-react-app</h6>
-                    <p>
-                        A python package designed to help users set up a Django and React based app,
-                        including the REST framework, JWT based login, and CORS header handling.
-                        <span class="text-muted small">
+                </div>
+
+                {#                    <div class="mb-2">#}
+                {#                        Technician#}
+                {#                        <span class="font-weight-bold">TelAid Industries</span>#}
+                {#                        <span class="text-muted small">2014{% if show_numbers == 'True' %} | (860) 439-7312{% endif %}</span>#}
+                {#                    </div>#}
+                {#                    <div>#}
+                {#                        <ul class="small-md">#}
+                {#                            <li>Conceptualized, designed, and implemented processes to help improve efficiency.</li>#}
+                {#                            <li>Aided in configuration, imaging, repair, labeling, and related prep of hardware.</li>#}
+                {#                            <li>Configured routers, switches, servers, desktops, laptops, phones, and more.</li>#}
+                {#                            <li>Assisted external and internal stakeholders with technical questions.</li>#}
+                {#                        </ul>#}
+                {#                    </div>#}
+                {##}
+                {#                    <div class="mb-2">#}
+                {#                        Floor Manager/IT Specialist,#}
+                {#                        <span class="font-weight-bold">Telio Restaurant</span>#}
+                {#                        <span class="text-muted small">2011 - 2013{% if show_numbers == 'True' %} | (917) 705-0129{% endif %}</span>#}
+                {#                    </div>#}
+                {#                    <div>#}
+                {#                        <ul class="small-md">#}
+                {#                            <li>Served as tech advisor on design, functionality, and implementation of all systems.</li>#}
+                {#                            <li>Advised planning and design of new quick service and bar/lounge concepts/menus.</li>#}
+                {#                            <li>Managed wait and bar staff resulting in maximized efficiency and sales.</li>#}
+                {#                        </ul>#}
+                {#                    </div>#}
+                {##}
+                {#                    <div class="mb-2">#}
+                {#                        Stage Manager (Magic Department),#}
+                {#                        <span class="font-weight-bold">French Woods Festival for the Performing Arts</span>#}
+                {#                        <span class="text-muted small">2007 – 2010{% if show_numbers == 'True' %} | (954) 346-7455{% endif %}</span>#}
+                {#                    </div>#}
+                {#                    <div>#}
+                {#                        <ul class="small-md">#}
+                {#                            <li>Organized end of session shows for 100+ performers using MS Access database.</li>#}
+                {#                            <li>Experience with theater management including lights and sounds systems.</li>#}
+                {#                        </ul>#}
+                {#                        </ul>#}
+                {#                    </div>#}
+
+            </div>
+            <div class="col-md-4">
+                <div class="text-center mb-5">
+                    <img src="https://www.msb.dev/static/favicon.png" alt="" class="img-responsive" style="max-width: 100px">
+                </div>
+
+                <h5>Contact Information</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="link-unstyled" href="tel:6464703317" target="_blank">
+                            <i class="fas fa-phone pr-2" aria-hidden="true"></i>(646) 470-3317
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link-unstyled" href="https://www.msb.dev" target="_blank">
+                            <i class="fas fa-globe pr-2" aria-hidden="true"></i>www.msb.dev
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link-unstyled" href="mailto:matt@msb.dev">
+                            <i class="fas fa-at pr-2" aria-hidden="true"></i>matt@msb.dev
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link-unstyled" href="https://www.linkedin.com/in/matthew-burlage" target="_blank">
+                            <i class="fab fa-linkedin pr-2" aria-hidden="true"></i>/matthew-burlage
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link-unstyled" href="https://www.linkedin.com/in/matthew-burlage" target="_blank">
+                            <i class="fab fa-github pr-2" aria-hidden="true"></i>/mattburlage
+                        </a>
+                    </li>
+                </ul>
+                <h5>Skills</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fab fa-react" aria-hidden="true"></i>&nbsp;&nbsp;React.js, Redux, React Router
+                    </li>
+                    <li>
+                        <i class="fab fa-python" aria-hidden="true"></i>&nbsp;&nbsp;Python, Django, DRF, Flask
+                    </li>
+                    <li>
+                        <i class="fab fa-node-js" aria-hidden="true"></i>&nbsp;&nbsp;Webpack, NPM, Meteor.js
+                    </li>
+                    {#                        <li>#}
+                    {#                            <i class="fab fa-php"></i>&nbsp;&nbsp;PHP, PDO#}
+                    {#                        </li>#}
+                    <li>
+                        <i class="fas fa-database" aria-hidden="true"></i>&nbsp;&nbsp;PostgreSQL, MS SQL, MongoDB
+                    </li>
+                    <li>
+                        <i class="fas fa-server" aria-hidden="true"></i>&nbsp;&nbsp;IIS, Ubuntu, wfastcgi
+                    </li>
+                    <li>
+                        <i class="fas fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;Git, GitHub, Jira, Sentry
+                    </li>
+                    <li>
+                        <i class="fas fa-ellipsis-h"></i>&nbsp;&nbsp;PHP, Java, JSON
+                    </li>
+                </ul>
+                <h5>Education</h5>
+                <ul class="list-unstyled small">
+                    <li>
+                        <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;BS, Computer Science, UNG, 2020 Graduation
+                    </li>
+                    <li>
+                        <i class="fas fa-university" aria-hidden="true"></i>&nbsp;&nbsp;TA, Software Engineering, 2020
+                    </li>
+                </ul>
+                <hr>
+                <h5>Open Source Projects</h5>
+                <p class="small text-muted">Here are a few open source things I have built.</p>
+                <h6>create-django-react-app</h6>
+                <p>
+                    A python package designed to help users set up a Django and React based app,
+                    including the REST framework, JWT based login, and CORS header handling.
+                    <span class="text-muted small">
                             <a class="text-muted" target="_blank" href="https://pypi.org/project/create-django-react-app/">PyPi</a> -
                             <a class="text-muted" target="_blank" href="https://github.com/mattburlage/create-django-react-app">GitHub</a>
                         </span>
-                    </p>
-                    <h6>NertzBoard</h6>
-                    <p>
-                        NertzBoard is a scoreboard for a multiplayer solitaire game called Nertz. NertzBoard handles the calculations for scoring and
-                        updates the other players in real time to see who is ahead. Players can focus on the action instead of worrying about math.
-                        <span class="text-muted small">
+                </p>
+                <h6>NertzBoard</h6>
+                <p>
+                    NertzBoard is a scoreboard for a multiplayer solitaire game called Nertz. NertzBoard handles the calculations for scoring and
+                    updates the other players in real time to see who is ahead. Players can focus on the action instead of worrying about math.
+                    <span class="text-muted small">
                             <a class="text-muted" target="_blank" href="https://www.nertzboard.com">View</a> -
                             <a class="text-muted" target="_blank" href="https://github.com/mattburlage/nertzboard">GitHub</a>
                         </span>
-                    </p>
-                    <h6>django-bs-icons</h6>
-                    <p>
-                        A package designed to make it easy for users to display Bootstrap Icons.
-                        <span class="text-muted small">
+                </p>
+                <h6>django-bs-icons</h6>
+                <p>
+                    A package designed to make it easy for users to display Bootstrap Icons.
+                    <span class="text-muted small">
                             <a class="text-muted" target="_blank" href="https://pypi.org/project/django-bs-icons/">PyPi</a> -
                             <a class="text-muted" target="_blank" href="https://github.com/mattburlage/django-bs-icons">GitHub</a>
                         </span>
-                    </p>
-                    {#                                        <div class="text-center mt-4">#}
-                    {#                                            <img src="/static/msbdev/qrcode.png" class="img-responsive w-50" alt="qr-code to msb.dev">#}
-                    {#                                        </div>#}
-                </div>
+                </p>
+                {#                                        <div class="text-center mt-4">#}
+                {#                                            <img src="/static/msbdev/qrcode.png" class="img-responsive w-50" alt="qr-code to msb.dev">#}
+                {#                                        </div>#}
             </div>
         </div>
     </div>
-</main>
+</div>
+
 <footer class="text-muted pb-3 pt-4 bg-dark d-print-none">
     <div class="container">
         <p class="float-right"> <a href="#" class="text-light small">Back to top</a> </p>
@@ -515,6 +537,7 @@
         type="module"
         src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.mjs"
 ></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     // Show the contact form when the link is clicked
     function showContactForm() {
@@ -569,13 +592,39 @@
                 setInterval(() => msgNotify.fadeOut(1000), 3000)
             })
     }
+    let toggled = false;
+    let scrolled = false;
+    const arrow = $('.arrow')
 
     function toggleResume () {
+        if (toggled) $('.nyc-bg').height('100%');
+        else $('.nyc-bg').height('300px');
+
+        toggled = !toggled;
+
         $('#principles').collapse('toggle');
         $('#mywork').collapse('toggle');
+        $('#aboutme').collapse('toggle');
         $('#resume').collapse('toggle');
         $('.collapse-div').collapse('toggle');
+        arrow.collapse('toggle');
     }
+
+    $(document).ready(() => {
+        setTimeout(() => {
+            if (!toggled && !scrolled) arrow.fadeIn();
+        }, 2000)
+
+        $(window).scroll(() => {
+            scrolled = true;
+            arrow.fadeOut()
+        })
+    })
+
+    AOS.init({
+        once: true,
+        duration: 600,
+    });
 </script>
 </body>
 </html>
