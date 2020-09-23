@@ -786,14 +786,17 @@
     function toggleResume () {
         const spacingTop = $('#spacing-top')
         const spacingTop2 = $('#spacing-top2')
+        const nycBg = $('.nyc-bg')
 
         if (toggled) {
-            $('.nyc-bg').height('100%')
+            nycBg.height('100%')
+            nycBg.css('min-height', '400px')
             spacingTop.height('25%')
             spacingTop2.height('15%')
         }
         else {
             $('.nyc-bg').height('300px')
+            nycBg.css('min-height', '300px')
             spacingTop.height('5%')
             spacingTop2.height('0%')
         }
