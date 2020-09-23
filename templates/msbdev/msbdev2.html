@@ -130,7 +130,8 @@
             </div>
         </div>
 
-        <div style="height: 25%" id="spacing-top"></div>
+        <div style="height: 25%" class="d-none d-sm-block" id="spacing-top"></div>
+        <div style="height: 15%" class="d-sm-none" id="spacing-top2"></div>
 
         <div class="d-print-none nyc-bg-text text-center">
             <div class="container">
@@ -154,14 +155,18 @@
                             {#                            </li>#}
                             <li class="nav-item">
                             </li>
-                            <a class="nav-link text-info nyc-bg-link" onclick="toggleResume()" href="#">Back</a>
+                            <a class="nav-link text-info nyc-bg-link" onclick="toggleResume(); return false;" href="#">
+                                Back
+                            </a>
                         </ul>
                         <ul class="nav justify-content-center collapse-div collapse show">
                             <li class="nav-item">
                                 <a class="nav-link text-info nyc-bg-link" href="#aboutme">About Me</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" onclick="toggleResume()" href="#">My Resume</a>
+                                <a class="nav-link text-info nyc-bg-link" onclick="toggleResume(); return false;" href="#">
+                                    My Resume
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-info nyc-bg-link" href="#mywork">My Work</a>
@@ -200,10 +205,10 @@
 <section class="jumbotron jumbotron-fluid text-center mb-0 collapse show" id='aboutme'>
     <div class="container">
         <div class="row">
-            <div class="col-4" data-aos="fade-left">
-                <img class="rounded-circle" src="https://i.ibb.co/Mp2Y9gy/me.jpg">
+            <div class="col-12 mb-5 mb-md-0 col-md-4" data-aos="fade-left">
+                <img class="rounded-circle" src="https://i.ibb.co/Mp2Y9gy/me.jpg" alt="Me">
             </div>
-            <div class="col-8" data-aos="fade-right">
+            <div class="col-12 col-md-8" data-aos="fade-right">
                 <h4 class="jumbotron-heading mb-3">Hello World, I'm Matthew.</h4>
 
                 <ul class="list-unstyled">
@@ -415,7 +420,7 @@
             </div>
         </div>
         <div class="row mt-2">
-            <div class="col-8 offset-2">
+            <div class="col-12 col-md-8 offset-sm-2">
                 <form onsubmit="submitForm(); return false">
                     <label for="id_email" class="font-weight-bold mt-1">
                         Email
@@ -766,13 +771,18 @@
     const arrow = $('.arrow')
 
     function toggleResume () {
+        const spacingTop = $('#spacing-top')
+        const spacingTop2 = $('#spacing-top2')
+
         if (toggled) {
-            $('.nyc-bg').height('100%');
-            $('#spacing-top').height('25%')
+            $('.nyc-bg').height('100%')
+            spacingTop.height('25%')
+            spacingTop2.height('15%')
         }
         else {
             $('.nyc-bg').height('300px')
-            $('#spacing-top').height('5%')
+            spacingTop.height('5%')
+            spacingTop2.height('0%')
         }
 
         toggled = !toggled;
