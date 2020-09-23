@@ -90,7 +90,7 @@
 
         .arrow-div {
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
         }
 
         .nyc-bg-text {
@@ -779,6 +779,7 @@
     }
     let toggled = false;
     let scrolled = false;
+    let tallEnough = true;
     const arrow = $('.arrow')
 
     function toggleResume () {
@@ -807,9 +808,12 @@
         arrow.fadeOut();
     }
 
+    const tallEnoughHeight = 450;
+
     $(document).ready(() => {
+
         setTimeout(() => {
-            if (!toggled && !scrolled) arrow.fadeIn();
+            if (!toggled && !scrolled && tallEnough) arrow.fadeIn();
         }, 2000)
 
         $(window).scroll(() => {
@@ -841,6 +845,9 @@
             const newDelay = (index % columns) * 150
             $('#card' + (index+1)).attr('data-aos-delay', newDelay)
         })
+
+        tallEnough = $(window).height() > 450;
+        if (!tallEnough) arrow.hide();
     }
 
     AOS.init({
