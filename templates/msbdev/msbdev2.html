@@ -61,7 +61,6 @@
         html, body {
             scroll-behavior: smooth;
             height: 100%;
-        {#overflow-x: hidden;#}
         }
 
         .nyc-bg {
@@ -78,8 +77,20 @@
             opacity: 65%;
         }
 
+        .nyc-bg-3 {
+            display: flex;
+            height: 80%;
+            justify-content: center;
+            align-items: center;
+        }
+
         .nyc-bg-link {
             filter: brightness(125%);
+        }
+
+        .arrow-div {
+            position: absolute;
+            bottom: 20px;
         }
 
         .nyc-bg-text {
@@ -130,63 +141,63 @@
             </div>
         </div>
 
-        <div style="height: 25%" class="d-none d-sm-block" id="spacing-top"></div>
-        <div style="height: 15%" class="d-sm-none" id="spacing-top2"></div>
-
-        <div class="d-print-none nyc-bg-text text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="mt-3">Matthew Smith Burlage</h1>
-                        <h4 class="collapse-div collapse show">Software Engineer</h4>
-                        <p class="lead">
-                            Focused on creating secure, powerful, efficient, and intuitive web systems.
-                        </p>
-                        <ul class="nav justify-content-center collapse-div collapse">
-                            <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" onclick='print(); return false;' href="#">
-                                    Print Me
-                                </a>
-                            </li>
-                            {#                            <li class="nav-item">#}
-                            {#                                <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">#}
-                            {#                                    Contact Me#}
-                            {#                                </a>#}
-                            {#                            </li>#}
-                            <li class="nav-item">
-                            </li>
-                            <a class="nav-link text-info nyc-bg-link" onclick="toggleResume(); return false;" href="#">
-                                Back
-                            </a>
-                        </ul>
-                        <ul class="nav justify-content-center collapse-div collapse show">
-                            <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" href="#aboutme">About Me</a>
-                            </li>
-                            <li class="nav-item">
+        <div class="nyc-bg-3">
+            <div class="d-print-none nyc-bg-text text-center">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="mt-3">Matthew Smith Burlage</h1>
+                            <h4 class="collapse-div collapse show">Software Engineer</h4>
+                            <p class="lead">
+                                Focused on creating secure, powerful, efficient, and intuitive web systems.
+                            </p>
+                            <ul class="nav justify-content-center collapse-div collapse">
+                                <li class="nav-item">
+                                    <a class="nav-link text-info nyc-bg-link" onclick='print(); return false;' href="#">
+                                        Print Me
+                                    </a>
+                                </li>
+                                {#                            <li class="nav-item">#}
+                                {#                                <a class="nav-link text-info" onclick='showContactForm(); return false;' href="#">#}
+                                {#                                    Contact Me#}
+                                {#                                </a>#}
+                                {#                            </li>#}
+                                <li class="nav-item">
+                                </li>
                                 <a class="nav-link text-info nyc-bg-link" onclick="toggleResume(); return false;" href="#">
-                                    My Resume
+                                    Back
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" href="#mywork">My Work</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" href="#principles">Principles</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-info nyc-bg-link" href="#contactme">Contact Me</a>
-                            </li>
-                        </ul>
+                            </ul>
+                            <ul class="nav justify-content-center collapse-div collapse show">
+                                <li class="nav-item">
+                                    <a class="nav-link text-info nyc-bg-link" href="#aboutme">About Me</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-info nyc-bg-link" onclick="toggleResume(); return false;" href="#">
+                                        My Resume
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-info nyc-bg-link" href="#mywork">My Work</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-info nyc-bg-link" href="#principles">Principles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-info nyc-bg-link" href="#contactme">Contact Me</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div style="height: 15%" id="spacing-arrow"></div>
+            <div class="arrow-div">
+                <div class="arrow bounce collapse show">
+                    <i class="fa fa-arrow-down fa-2x"></i>
+                </div>
+            </div>
 
-        <div class="arrow bounce collapse show">
-            <i class="fa fa-arrow-down fa-2x"></i>
         </div>
     </div>
 </div>
@@ -202,7 +213,7 @@
         </div>
     </div>
 </div>
-<section class="jumbotron jumbotron-fluid text-center mb-0 collapse show" id='aboutme'>
+<section class="jumbotron jumbotron-fluid hide-horiz-overflow text-center mb-0 collapse show" id='aboutme'>
     <div class="container">
         <div class="row">
             <div class="col-12 mb-5 mb-md-0 col-md-4" data-aos="fade-left">
@@ -420,7 +431,7 @@
             </div>
         </div>
         <div class="row mt-2">
-            <div class="col-12 col-md-8 offset-sm-2">
+            <div class="col-12 col-md-8 offset-md-2">
                 <form onsubmit="submitForm(); return false">
                     <label for="id_email" class="font-weight-bold mt-1">
                         Email
@@ -825,11 +836,9 @@
         const width = $(window).width();
         if (width < 768) columns = 1;
         else if (width < 992) columns = 2;
-        console.log('columns', columns)
 
         cards.each(index => {
             const newDelay = (index % columns) * 150
-            console.log('card ' + (index + 1) + ' delay', newDelay)
             $('#card' + (index+1)).attr('data-aos-delay', newDelay)
         })
     }
