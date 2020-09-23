@@ -50,6 +50,10 @@
             font-size: 85%;
         }
 
+        textarea {
+            resize: none;
+        }
+
         @media (min-width: 1200px) {
             .small-md {font-size: 100%;}
         }
@@ -57,7 +61,7 @@
         html, body {
             scroll-behavior: smooth;
             height: 100%;
-            {#overflow-x: hidden;#}
+        {#overflow-x: hidden;#}
         }
 
         .nyc-bg {
@@ -400,6 +404,34 @@
     </div>
 </section>
 
+<section class="jumbotron hide-horiz-overflow bg-light jumbotron-fluid mb-0 collapse show" id='contactme'>
+    <div class="container" data-aos="flip-up" data-aos-offset="200">
+        <div class="row text-center">
+            <div class="col">
+                <h4 class="jumbotron-heading" data-aos="zoom-in" data-aos-anchor="#prin2">So Now What?</h4>
+                <div class="lead" data-aos="zoom-in" data-aos-anchor="#prin2">Reach out to me!</div>
+                <div>If you think that I can help your project or organization, feel free to reach out!</div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-8 offset-2">
+                <form onsubmit="submitForm(); return false">
+                    <label for="id_email" class="font-weight-bold mt-1">
+                        Email
+                    </label>
+                    <input type="email" required id="id_email" class="form-control">
+
+                    <label for="id_note" class="font-weight-bold mt-2">
+                        Comments
+                    </label>
+                    <textarea required rows="5" id="id_note" class="form-control"></textarea>
+                    <button id="sub_btn" class="btn btn-outline-primary mt-2">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="collapse bg-light pt-5 pb-5" id="resume">
     <div class="container">
 
@@ -673,6 +705,7 @@
         src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.mjs"
 ></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous"></script>
 <script>
     // Show the contact form when the link is clicked
     function showContactForm() {
@@ -717,14 +750,14 @@
             },
             body: JSON.stringify(formData)
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.ok) return res.json();
+                else $("#sub_btn").notify("Error");
+            })
             .then(json => {
-                console.log(json);
                 $('#id_email').val('');
                 $('#id_note').val('');
-                const msgNotify = $('#msgnotify');
-                msgNotify.fadeIn(400);
-                setInterval(() => msgNotify.fadeOut(1000), 3000)
+                $("#sub_btn").notify("Submitted", 'success');
             })
     }
     let toggled = false;
