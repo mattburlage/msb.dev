@@ -34,8 +34,11 @@ def submit_form(request):
         email = serializer.validated_data['email']
         note = serializer.validated_data['note']
 
-        if email in AppSetting.objects.get(name="EMAIL_BLACKLIST").content:
-            return Response(status=status.HTTP_401_UNAUTHORIZED)
+        try:
+            if email in AppSetting.objects.get(name="EMAIL_BLACKLIST").content:
+                return Response(status=status.HTTP_401_UNAUTHORIZED)
+        except AppSetting.DoesNotExist:
+            pass
 
         existing_form = ContactForm.objects.filter(email=email, note=note)
         if existing_form:
