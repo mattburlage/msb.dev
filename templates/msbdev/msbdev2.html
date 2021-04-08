@@ -341,9 +341,6 @@
             {% for item in work_items %}
                 <div id="card{{ forloop.counter }}" class="col-12 col-md-6 col-lg-4 cards" data-aos="fade-up" data-aos-delay="0">
                     <div class="card mb-4 box-shadow">
-                        {% if item.image_url_safe %}
-                            {#                        <img alt="img" class="card-img-top" src="{{ item.image_url_safe }}"/>#}
-                        {% endif %}
                         <div class="card-body">
                             <div class="card-text">
                                 <strong>{{ item.name_safe }}</strong>
@@ -361,36 +358,6 @@
                     </div>
                 </div>
             {% endfor %}
-            {#            <div id="card1" class="col-md-4" data-aos="fade-up" data-aos-delay="0">#}
-            {#                <div class="card mb-4 box-shadow">#}
-            {#                    <img class="card-img-top" src="https://i.ibb.co/s2Rx6BL/agenda-screenshot2.png"/><div class="card-body"><p class="card-text"><strong>Agenda Management</strong><br>The Agenda Management software helps local governments stay on top of their meetings, including#}
-            {#                    approval workflows and minutes capture.</p> </div>#}
-            {#                </div>#}
-            {#            </div>#}
-            {#            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">#}
-            {#                <div class="card mb-4 box-shadow">#}
-            {#                    <img class="card-img-top" src="https://i.ibb.co/5ktpdNC/nertzboard2.png"/>#}
-            {#                    <div class="card-body">#}
-            {#                        <p class="card-text"><strong>NertzBoard</strong><br>#}
-            {##}
-            {#                            NertzBoard is a scoreboard keeping app for a multiplayer solitaire card game called Nertz.  With live score updates, scoring history, and multiple game rooms, players can keep their head in the game.#}
-            {#                        </p>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </div>#}
-            {#            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">#}
-            {#                <div class="card mb-4 box-shadow">#}
-            {#                    <img class="card-img-top" src="https://i.ibb.co/5Mz2w5c/helpdesk.png"/>#}
-            {#                    <div class="card-body">#}
-            {#                        <p class="card-text"><strong>Helpdesk</strong><br>This simple yet powerfull helpdesk system was designed for a county government. It emphasizes simplicity and efficiency while matching their existing legacy system.</p>#}
-            {#                        <div class="d-flex justify-content-between align-items-center">#}
-            {#                            <div class="btn-group d-none">#}
-            {#                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>#}
-            {#                            </div>#}
-            {#                        </div>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </div>#}
         </div>
     </div>
 </div>
@@ -475,7 +442,6 @@
                         are also uploaded to a public site to comply with any publication requirements that may exist.
                     </div>
                 </div>
-
                 <div class="mb-2">
                     <span class="font-weight-bold">Five Star Ordering</span>&nbsp;&nbsp;
                     <span class="text-muted small">React, Django, PostgreSQL, PythonAnywhere</span>
@@ -486,8 +452,6 @@
                     payment processing.  The platform allows new restaurants to be added with zero additional coding
                     and can be completed as quickly as a few hours.
                 </div>
-
-
                 <div class="mb-2">
                     <span class="font-weight-bold">Position Control</span>&nbsp;&nbsp;
                     <span class="text-muted small">Django, React, Microsoft SQL, IIS</span>
@@ -501,19 +465,7 @@
                     The Finance department can use the system to calculate labor costs for individual departments or
                     the whole county, and projects future budgets.
                 </div>
-                {##}
-                {#                    <div class="mb-2">#}
-                {#                        <span class="font-weight-bold">Employee Reimbursement System</span><br>#}
-                {#                        <span class="text-muted small">Django, jQuery, Microsoft SQL, IIS</span>#}
-                {#                    </div>#}
-                {#                    <div class="mb-4">#}
-                {#                        The Travel Expense system allows employees to file for reimbursement for business expenses.#}
-                {#                        It allows for department approval to occur before submitting, and ensures specific rules about#}
-                {#                        reimbursement are followed.  Once approved, the form and any attachments are combined into a#}
-                {#                        single PDF and sent to Finance for processing.#}
-                {#                    </div>#}
                 <hr>
-
                 <h5>Work Experience</h5>
                 <div class="mb-2">
                     Software Developer,
@@ -557,49 +509,7 @@
                         <li>Acted as Sales Floor Leader. Regularly handles delicate issues throughout store.</li>
                         <li>Managed, with guidance, scheduling and staffing, including helping with hiring.</li>
                     </ul>
-                </div>
-
-                {#                    <div class="mb-2">#}
-                {#                        Technician#}
-                {#                        <span class="font-weight-bold">TelAid Industries</span>#}
-                {#                        <span class="text-muted small">2014</span>#}
-                {#                    </div>#}
-                {#                    <div>#}
-                {#                        <ul class="small-md">#}
-                {#                            <li>Conceptualized, designed, and implemented processes to help improve efficiency.</li>#}
-                {#                            <li>Aided in configuration, imaging, repair, labeling, and related prep of hardware.</li>#}
-                {#                            <li>Configured routers, switches, servers, desktops, laptops, phones, and more.</li>#}
-                {#                            <li>Assisted external and internal stakeholders with technical questions.</li>#}
-                {#                        </ul>#}
-                {#                    </div>#}
-                {##}
-                {#                    <div class="mb-2">#}
-                {#                        Floor Manager/IT Specialist,#}
-                {#                        <span class="font-weight-bold">Telio Restaurant</span>#}
-                {#                        <span class="text-muted small">2011 - 2013</span>#}
-                {#                    </div>#}
-                {#                    <div>#}
-                {#                        <ul class="small-md">#}
-                {#                            <li>Served as tech advisor on design, functionality, and implementation of all systems.</li>#}
-                {#                            <li>Advised planning and design of new quick service and bar/lounge concepts/menus.</li>#}
-                {#                            <li>Managed wait and bar staff resulting in maximized efficiency and sales.</li>#}
-                {#                        </ul>#}
-                {#                    </div>#}
-                {##}
-                {#                    <div class="mb-2">#}
-                {#                        Stage Manager (Magic Department),#}
-                {#                        <span class="font-weight-bold">French Woods Festival for the Performing Arts</span>#}
-                {#                        <span class="text-muted small">2007 – 2010</span>#}
-                {#                    </div>#}
-                {#                    <div>#}
-                {#                        <ul class="small-md">#}
-                {#                            <li>Organized end of session shows for 100+ performers using MS Access database.</li>#}
-                {#                            <li>Experience with theater management including lights and sounds systems.</li>#}
-                {#                        </ul>#}
-                {#                        </ul>#}
-                {#                    </div>#}
-
-            </div>
+                </div>            </div>
             <div class="col-md-4">
                 <div class="text-center mb-5">
                     <img src="https://www.msb.dev/static/favicon.png" alt="" class="img-responsive" style="max-width: 100px">
